@@ -1,0 +1,47 @@
+{
+  "name": "ColorPicker",
+  "lowCaseName": "colorpicker",
+  "description": "Colorpicker custom template variable",
+  "author": "Benjamin Vauchel",
+  "version": "1.0.3",
+  "package": {
+    "elements": {
+      "plugins": [
+        {
+          "name": "ColorPicker",
+          "file": "colorpicker.plugin.php",
+          "events": [
+            "OnManagerPageBeforeRender",
+            "OnTVInputRenderList",
+            "OnTVOutputRenderList",
+            "OnTVInputPropertiesList",
+            "OnTVOutputRenderPropertiesList",
+            "OnDocFormRender"
+          ]
+        }
+      ]
+    },
+    "systemSettings": [
+      {
+        "key": "format",
+        "area": "site",
+        "value": "%e.| %B |%Y"
+      },
+      {
+        "key": "manager_format",
+        "area": "site",
+        "value": "j.| F |Y"
+      },
+      {
+        "key": "separator",
+        "area": "site",
+        "value": "&thinsp;–&thinsp;"
+      }
+    ]
+  },
+  "build": {
+    "readme": "docs/readme.txt",
+    "license": "docs/license.txt",
+    "changelog": "docs/changelog.txt"
+  }
+}

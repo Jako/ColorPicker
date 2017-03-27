@@ -1,13 +1,25 @@
---------------------
 ColorPicker
---------------------
-Version: 1.0.2-rc2
-Released: February 1, 2012
-Since: May 12, 2011
-Author: Benjamin Vauchel <contact@omycode.fr>
+===========
 
-ColorPicker is a TV for MODx Revolution 2.x inspired by ColorPickerField ExtJS Plugin
+Color select custom template variable in MODX Revolution.
 
-Official Documentation: http://www.omycode.fr/modx-extras/colorpicker.html
-Bugs and Feature Requests: https://github.com/omycode/colorpicker
-Questions: http://forums.modx.com/thread/41009/revo-colorpicker-tv
+Author: Benjamin Vauchel <benjamin.vauchel@gmail.com>
+Maintainer and further development: Thomas Jakobi <thomas.jakobi@partout.info>
+License: GNU GPLv2
+
+Features
+--------
+With this MODX Revolution custom template variable a color select input
+could be used to select a color in a MODX resource.
+
+Installation
+------------
+MODX Package Management
+
+Usage
+-----
+Install via package manager, create a TV and change the input & output type to 'ColorPicker'
+
+GitHub Repository
+-----------------
+https://github.com/Jako/ColorPicker

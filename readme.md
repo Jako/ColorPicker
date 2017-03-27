@@ -1,10 +1,16 @@
-ColorPicker Extra for MODx Revolution
-=======================================
+# ColorPicker
 
-**Author:** Benjamin Vauchel <contact@omycode.fr>
+Color select custom template variable in MODX Revolution.
 
-Official Documentation: http://www.omycode.fr/modx-extras/colorpicker.html  
-Bugs and Feature Requests: https://github.com/omycode/colorpicker  
-Questions: http://forums.modx.com/thread/41009/revo-colorpicker-tv  
+## Features
 
-ColorPicker is a TV for MODx Revolution 2.2 inspired by ColorPickerField ExtJS Plugin
+With this MODX Revolution custom template variable two depending datepicker inputs
+could be used to insert a date range in a MODX resource.
+
+## Installation
+
+MODX Package Management
+
+## Usage
+
+Install via package manager, create a TV and change the input & output type to 'Date Range (From <> To)'
