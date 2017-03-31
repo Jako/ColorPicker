@@ -13,4 +13,4 @@ MODX Package Management
 
 ## Usage
 
-Install via package manager, create a TV and change the input & output type to 'Date Range (From <> To)'
+Install via package manager, create a TV and change the input & output type to 'ColorPicker'
