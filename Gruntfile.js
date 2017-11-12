@@ -95,17 +95,23 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            scripts: {
+            js: {
                 files: [
-                    'source/js/mgr/**/*.js'
+                    'source/**/*.js'
                 ],
                 tasks: ['uglify', 'usebanner:js', 'sftp:js']
             },
             css: {
                 files: [
-                    'source/sass/mgr/**/*.scss'
+                    'source/**/*.scss'
                 ],
                 tasks: ['sass', 'cssmin', 'usebanner:css', 'sftp:css']
+            },
+            config: {
+                files: [
+                    '_build/config.json'
+                ],
+                tasks: ['default']
             }
         },
         bump: {
