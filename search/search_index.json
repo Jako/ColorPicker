@@ -1,0 +1,69 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "ColorPicker\n\n\nColor select custom template variable in MODX Revolution.\n\n\nRequirements\n\n\n\n\nMODX Revolution 2.5+\n\n\nPHP v5.3+\n\n\n\n\nFeatures\n\n\nWith this MODX Revolution custom template variable a color select input\ncould be used to select a color in a MODX resource.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/#colorpicker", 
+            "text": "Color select custom template variable in MODX Revolution.", 
+            "title": "ColorPicker"
+        }, 
+        {
+            "location": "/#requirements", 
+            "text": "MODX Revolution 2.5+  PHP v5.3+", 
+            "title": "Requirements"
+        }, 
+        {
+            "location": "/#features", 
+            "text": "With this MODX Revolution custom template variable a color select input\ncould be used to select a color in a MODX resource.", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/installation/", 
+            "text": "Install from MODX Extras\n\n\nSearch for ColorPicker in the Package Manager of your MODX installation and\ninstall it in there.\n\n\nManual installation\n\n\nIf you can't access the MODX Extras Repository in your MODX installation, you\ncan manually install ColorPicker.\n\n\n\n\nDownload the transport package from \nMODX Extras\n (or one of the pre built transport packages in \n_packages\n)\n\n\nUpload the zip file to your MODX installation's \ncore/packages\n folder.\n\n\nIn the MODX Manager, navigate to the Package Manager page, and select 'Search locally for packages' from the dropdown button.\n\n\nColorPicker should now show up in the list of available packages. Click the corresponding 'Install' button and follow instructions to complete the installation.\n\n\n\n\nBuild it from source\n\n\nTo build and install the package from source you could use \nGit Package\nManagement\n. The GitHub\nrepository of ColorPicker contains a\n\nconfig.json\n\nto build that package locally. Use this option, if you want to debug ColorPicker\nand/or contribute bugfixes and enhancements.", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/installation/#install-from-modx-extras", 
+            "text": "Search for ColorPicker in the Package Manager of your MODX installation and\ninstall it in there.", 
+            "title": "Install from MODX Extras"
+        }, 
+        {
+            "location": "/installation/#manual-installation", 
+            "text": "If you can't access the MODX Extras Repository in your MODX installation, you\ncan manually install ColorPicker.   Download the transport package from  MODX Extras  (or one of the pre built transport packages in  _packages )  Upload the zip file to your MODX installation's  core/packages  folder.  In the MODX Manager, navigate to the Package Manager page, and select 'Search locally for packages' from the dropdown button.  ColorPicker should now show up in the list of available packages. Click the corresponding 'Install' button and follow instructions to complete the installation.", 
+            "title": "Manual installation"
+        }, 
+        {
+            "location": "/installation/#build-it-from-source", 
+            "text": "To build and install the package from source you could use  Git Package\nManagement . The GitHub\nrepository of ColorPicker contains a config.json \nto build that package locally. Use this option, if you want to debug ColorPicker\nand/or contribute bugfixes and enhancements.", 
+            "title": "Build it from source"
+        }, 
+        {
+            "location": "/usage/", 
+            "text": "Output Options\n\n\nThe following output options could be set in template variable settings if the\noutput type is set to \nColorPicker\n. Another possibility is to\nassign the settings as properties to the MODX tag\n1\n.\n\n\n\n\n\n\n\n\nSetting\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nFormat\n\n\nCSS color format\n\n\nHexadecimal\n\n\n\n\n\n\nOutput\n\n\nOutput type\n2\n.\n\n\nCSS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe colorpicker template tariable could be formatted in template or template chunks with the following tag syntax: \n[[*tvname? \ncolor_format=`hex` \ncolor_output=`css`]]\n\n\n\n\n\n\nExamples of CSS output: \n#FFFFFF\n or \nrgb(255,255,255)\n or \nhsl(1,1,1)\n. Examples of JSON output: \n{\"FF\",\"FF\",\"FF\"}\n or \n{255,255,255}\n or \n{1,1,1}\n.", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/usage/#output-options", 
+            "text": "The following output options could be set in template variable settings if the\noutput type is set to  ColorPicker . Another possibility is to\nassign the settings as properties to the MODX tag 1 .     Setting  Description  Default      Format  CSS color format  Hexadecimal    Output  Output type 2 .  CSS         The colorpicker template tariable could be formatted in template or template chunks with the following tag syntax:  [[*tvname?  color_format=`hex`  color_output=`css`]]    Examples of CSS output:  #FFFFFF  or  rgb(255,255,255)  or  hsl(1,1,1) . Examples of JSON output:  {\"FF\",\"FF\",\"FF\"}  or  {255,255,255}  or  {1,1,1} .", 
+            "title": "Output Options"
+        }, 
+        {
+            "location": "/contributors/", 
+            "text": "The ColorPicker project was started in 2011 by \nBenjamin\nVauchel\n and is maintained and developed\nfurther since 2017 by \nThomas Jakobi\n.\n\n\nThanks to everybody who contributed, either by creating pull requests, sending bug reports or donating.", 
+            "title": "Contributors"
+        }, 
+        {
+            "location": "/donate/", 
+            "text": "Support ColorPicker\n\n\nColorPicker\n is and always will be free and open-source, but it still requires many man-hours of development, \nbug-fixing, support in MODX forums and on GitHub between the releases.\n\n\nPlease support the ongoing and past development of \nColorPicker\n by making a donation below.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nColorPicker\n development is sponsored by Treehillstudio \u2013 MODX Development in M\u00fcnsterland.", 
+            "title": "Donate"
+        }, 
+        {
+            "location": "/donate/#support-colorpicker", 
+            "text": "ColorPicker  is and always will be free and open-source, but it still requires many man-hours of development, \nbug-fixing, support in MODX forums and on GitHub between the releases.  Please support the ongoing and past development of  ColorPicker  by making a donation below.           ColorPicker  development is sponsored by Treehillstudio \u2013 MODX Development in M\u00fcnsterland.", 
+            "title": "Support ColorPicker"
+        }
+    ]
+}
