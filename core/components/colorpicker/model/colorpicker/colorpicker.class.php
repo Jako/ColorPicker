@@ -4,6 +4,7 @@
  * The main Colorpicker service class
  *
  * Copyright 2011-2017 by Benjamin Vauchel <benjamin.vauchel@gmail.com>
+ * Copyright 2017-2018 by Thomas Jakobi <thomas.jakobipartout.info>
  *
  * @package colorpicker
  * @subpackage classfile
