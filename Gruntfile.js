@@ -2,7 +2,6 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         modx: grunt.file.readJSON('_build/config.json'),
-        sshconfig: grunt.file.readJSON('/Users/jako/Documents/MODx/partout.json'),
         banner: '/*!\n' +
         ' * <%= modx.name %> - <%= modx.description %>\n' +
         ' * Version: <%= modx.version %>\n' +
@@ -61,51 +60,18 @@ module.exports = function (grunt) {
                 dest: 'assets/components/colorpicker/css/mgr/colorpicker.min.css'
             }
         },
-        sftp: {
-            css: {
-                files: {
-                    "./": [
-                        'assets/components/colorpicker/css/mgr/colorpicker.min.css',
-                        'source/css/mgr/colorpicker.css'
-                    ]
-                },
-                options: {
-                    path: '<%= sshconfig.hostpath %>develop/colorpicker/',
-                    srcBasePath: 'develop/colorpicker/',
-                    host: '<%= sshconfig.host %>',
-                    username: '<%= sshconfig.username %>',
-                    privateKey: '<%= sshconfig.privateKey %>',
-                    passphrase: '<%= sshconfig.passphrase %>',
-                    showProgress: true
-                }
-            },
-            js: {
-                files: {
-                    "./": ['assets/components/colorpicker/js/mgr/colorpicker.min.js']
-                },
-                options: {
-                    path: '<%= sshconfig.hostpath %>develop/colorpicker/',
-                    srcBasePath: 'develop/colorpicker/',
-                    host: '<%= sshconfig.host %>',
-                    username: '<%= sshconfig.username %>',
-                    privateKey: '<%= sshconfig.privateKey %>',
-                    passphrase: '<%= sshconfig.passphrase %>',
-                    showProgress: true
-                }
-            }
-        },
         watch: {
             js: {
                 files: [
                     'source/**/*.js'
                 ],
-                tasks: ['uglify', 'usebanner:js', 'sftp:js']
+                tasks: ['uglify', 'usebanner:js']
             },
             css: {
                 files: [
                     'source/**/*.scss'
                 ],
-                tasks: ['sass', 'cssmin', 'usebanner:css', 'sftp:css']
+                tasks: ['sass', 'cssmin', 'usebanner:css']
             },
             config: {
                 files: [
@@ -167,10 +133,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-ssh');
     grunt.loadNpmTasks('grunt-string-replace');
     grunt.renameTask('string-replace', 'bump');
 
     //register the task
-    grunt.registerTask('default', ['bump', 'uglify', 'sass', 'cssmin', 'usebanner', 'sftp']);
+    grunt.registerTask('default', ['bump', 'uglify', 'sass', 'cssmin', 'usebanner']);
 };
