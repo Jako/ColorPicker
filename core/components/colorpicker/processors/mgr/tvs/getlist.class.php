@@ -1,11 +1,11 @@
 <?php
-
 /**
  * Get list of Template Variables
  *
  * @package colorpicker
  * @subpackage processor
  */
+
 class ColorpickerTVsGetListProcessor extends modObjectGetListProcessor
 {
     public $classKey = 'modTemplateVar';
