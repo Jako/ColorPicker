@@ -1,6 +1,6 @@
 <?php
 /**
- * Get list of Template Variables
+ * Get list processor for Colorpicker
  *
  * @package colorpicker
  * @subpackage processor

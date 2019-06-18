@@ -1,13 +1,16 @@
 <?php
-
 /**
- * The main Colorpicker service class
+ * Colorpicker classfile
  *
  * Copyright 2011-2017 by Benjamin Vauchel <benjamin.vauchel@gmail.com>
- * Copyright 2017-2018 by Thomas Jakobi <thomas.jakobipartout.info>
+ * Copyright 2017-2019 by Thomas Jakobi <thomas.jakobipartout.info>
  *
  * @package colorpicker
  * @subpackage classfile
+ */
+
+/**
+ * class Colorpicker
  */
 class Colorpicker
 {
@@ -72,7 +75,7 @@ class Colorpicker
             'connectorUrl' => $assetsUrl . 'connector.php'
         ), $options);
 
-        // set default options
+        // Set default options
         $this->options = array_merge($this->options, array());
 
         $this->modx->lexicon->load($this->namespace . ':default');
@@ -113,7 +116,7 @@ class Colorpicker
         $cssUrl = $this->getOption('cssUrl') . 'mgr/';
         $cssSourceUrl = $assetsUrl . '../../../source/css/mgr/';
 
-        if ($this->getOption('debug') && $this->getOption('assetsUrl') != MODX_ASSETS_URL . 'components/colorpicker/') {
+        if ($this->getOption('debug') && $assetsUrl != MODX_ASSETS_URL . 'components/colorpicker/') {
             $this->modx->controller->addJavascript($jsSourceUrl . 'colorpicker.js?v=v' . $this->version);
             $this->modx->controller->addJavascript($jsSourceUrl . 'colorpickerfield.js?v=v' . $this->version);
             $this->modx->controller->addJavascript($jsSourceUrl . 'colorpickertv.js?v=v' . $this->version);
@@ -122,6 +125,6 @@ class Colorpicker
             $this->modx->controller->addJavascript($jsUrl . 'colorpicker.min.js?v=v' . $this->version);
             $this->modx->controller->addCss($cssUrl . 'colorpicker.min.css?v=v' . $this->version);
         }
-        $this->modx->controller->addHtml('<script type="text/javascript">Colorpicker.config = ' . json_encode($this->options) . ';</script>');
+        $this->modx->controller->addHtml('<script type="text/javascript">Colorpicker.config = ' . json_encode($this->options, JSON_PRETTY_PRINT) . ';</script>');
     }
 }

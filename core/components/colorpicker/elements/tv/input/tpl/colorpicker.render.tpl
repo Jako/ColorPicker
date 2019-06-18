@@ -1,6 +1,6 @@
 <input id="tv{$tv->id}" type="text"
        value="{$tv->value}" name="tv{$tv->id}"
-       onblur="MODx.fireResourceFormChange();" style="text-shadow:none"/>
+       onblur="MODx.fireResourceFormChange();"/>
 <script type="text/javascript">
     // <![CDATA[{literal}
     Ext.onReady(function () {
@@ -9,7 +9,7 @@
             name: 'tv{$tv->id}',
             value: '{$tv->value}',{literal}
             width: '100',
-            allowBlank: true,
+            allowBlank: {$params.allowBlank},
             listeners: {
                 change: {
                     fn: MODx.fireResourceFormChange,

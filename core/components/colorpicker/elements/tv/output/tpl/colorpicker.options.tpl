@@ -48,6 +48,11 @@
             anchor: '100%',
             listeners: oc
         }, {
+            xtype: MODx.expandHelp ? 'label' : 'hidden',
+            forId: 'prop_color_format{/literal}{$tv}{literal}',
+            html: _('colorpicker.format_desc'),
+            cls: 'desc-under'
+        }, {
             xtype: 'combo',
             fieldLabel: _('colorpicker.output'),
             description: MODx.expandHelp ? '' : _('colorpicker.output_desc'),
@@ -71,6 +76,30 @@
             value: params['color_output'] || 'css',
             anchor: '100%',
             listeners: oc
+        }, {
+            xtype: MODx.expandHelp ? 'label' : 'hidden',
+            forId: 'prop_color_output{/literal}{$tv}{literal}',
+            html: _('colorpicker.output_desc'),
+            cls: 'desc-under'
+        }, {
+            cls: "treehillstudio_about",
+            html: '<img width="133" height="40" src="' + Colorpicker.config.assetsUrl + 'images/treehill-studio-small.png"' + ' srcset="' + Colorpicker.config.assetsUrl + 'images/treehill-studio-small@2x.png 2x" alt="Treehill Studio">',
+            listeners: {
+                afterrender: function (component) {
+                    component.getEl().select('img').on('click', function () {
+                        var msg = '<span style="display: inline-block; text-align: center;">&copy; 2011-2017 by Benjamin Vauchel <a href="https://github.com/benjamin-vauchel" target="_blank">github.com/benjamin-vauchel</a><br>' +
+                                '<img src="' + Colorpicker.config.assetsUrl + 'images/treehill-studio.png" srcset="' + Colorpicker.config.assetsUrl + 'images/treehill-studio@2x.png 2x" alt"Treehill Studio" style="margin-top: 10px"><br>' +
+                                '&copy; 2017-2019 by <a href="https://treehillstudio.com" target="_blank">treehillstudio.com</a></span>';
+                        Ext.Msg.show({
+                            title: _('colorpicker') + ' ' + Colorpicker.config.version,
+                            msg: msg,
+                            buttons: Ext.Msg.OK,
+                            cls: 'treehillstudio_window',
+                            width: 330
+                        });
+                    });
+                }
+            }
         }],
         renderTo: 'tv-output-properties-form{/literal}{$tv}{literal}'
     });

@@ -3,10 +3,10 @@ module.exports = function (grunt) {
     grunt.initConfig({
         modx: grunt.file.readJSON('_build/config.json'),
         banner: '/*!\n' +
-        ' * <%= modx.name %> - <%= modx.description %>\n' +
-        ' * Version: <%= modx.version %>\n' +
-        ' * Build date: <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        ' */\n',
+            ' * <%= modx.name %> - <%= modx.description %>\n' +
+            ' * Version: <%= modx.version %>\n' +
+            ' * Build date: <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+            ' */\n',
         usebanner: {
             css: {
                 options: {
@@ -47,18 +47,58 @@ module.exports = function (grunt) {
                 outputStyle: 'expanded',
                 sourcemap: false
             },
-            dist: {
+            mgr: {
                 files: {
                     'source/css/mgr/colorpicker.css': 'source/sass/mgr/colorpicker.scss'
                 }
             }
         },
+        postcss: {
+            options: {
+                processors: [
+                    require('pixrem')(),
+                    require('autoprefixer')()
+                ]
+            },
+            mgr: {
+                src: [
+                    'source/css/mgr/colorpicker.css'
+                ]
+            }
+        },
         cssmin: {
-            css: {
+            mgr: {
                 src: [
                     'source/css/mgr/colorpicker.css'
                 ],
                 dest: 'assets/components/colorpicker/css/mgr/colorpicker.min.css'
+            }
+        },
+        imagemin: {
+            png: {
+                options: {
+                    optimizationLevel: 7
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'source/images/',
+                        src: ['**/*.png'],
+                        dest: 'assets/components/colorpicker/images/',
+                        ext: '.png'
+                    }
+                ]
+            },
+            gif: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'source/images/',
+                        src: ['**/*.gif'],
+                        dest: 'assets/components/colorpicker/images/',
+                        ext: '.gif'
+                    }
+                ]
             }
         },
         watch: {
@@ -84,19 +124,13 @@ module.exports = function (grunt) {
         bump: {
             copyright: {
                 files: [{
-                    src: 'core/components/colorpicker/elements/**/*.php',
-                    dest: 'core/components/colorpicker/elements/'
-                }, {
-                    src: 'source/js/mgr/**/*.js',
-                    dest: 'source/js/mgr/'
+                    src: 'core/components/colorpicker/model/colorpicker/colorpicker.class.php',
+                    dest: 'core/components/colorpicker/model/colorpicker/colorpicker.class.php'
                 }],
                 options: {
                     replacements: [{
                         pattern: /Copyright 2017(-\d{4})? by/g,
                         replacement: 'Copyright ' + (new Date().getFullYear() > 2017 ? '2017-' : '') + new Date().getFullYear() + ' by'
-                    }, {
-                        pattern: /(@copyright .*?) 2017(-\d{4})?/g,
-                        replacement: '$1 ' + (new Date().getFullYear() > 2017 ? '2017-' : '') + new Date().getFullYear()
                     }]
                 }
             },
@@ -109,6 +143,18 @@ module.exports = function (grunt) {
                     replacements: [{
                         pattern: /version = '\d+.\d+.\d+[-a-z0-9]*'/ig,
                         replacement: 'version = \'' + '<%= modx.version %>' + '\''
+                    }]
+                }
+            },
+            outputoptions: {
+                files: [{
+                    src: 'core/components/colorpicker/elements/tv/output/tpl/colorpicker.options.tpl',
+                    dest: 'core/components/colorpicker/elements/tv/output/tpl/colorpicker.options.tpl'
+                }],
+                options: {
+                    replacements: [{
+                        pattern: /&copy; 2017(-\d{4})?/g,
+                        replacement: '&copy; ' + (new Date().getFullYear() > 2017 ? '2017-' : '') + new Date().getFullYear()
                     }]
                 }
             },
@@ -130,6 +176,7 @@ module.exports = function (grunt) {
     //load the packages
     grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-postcss');
@@ -138,5 +185,5 @@ module.exports = function (grunt) {
     grunt.renameTask('string-replace', 'bump');
 
     //register the task
-    grunt.registerTask('default', ['bump', 'uglify', 'sass', 'cssmin', 'usebanner']);
+    grunt.registerTask('default', ['bump', 'uglify', 'sass', 'postcss', 'cssmin', 'usebanner']);
 };
