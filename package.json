@@ -2,6 +2,7 @@
   "name": "colorpicker",
   "description": "Colorpicker custom template variable",
   "author": "Thomas Jakobi <thomas.jakobi@partout.info>",
+  "private": true,
   "devDependencies": {
     "autoprefixer": "^9.5.1",
     "grunt": "^1.0.4",

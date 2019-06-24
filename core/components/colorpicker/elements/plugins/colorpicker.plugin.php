@@ -1,6 +1,10 @@
 <?php
 /**
- * Colorpicker TV plugin
+ * Colorpicker Runtime Hooks
+ *
+ * Registers custom TV input & output types and includes javascripts on document
+ * edit pages so that the TV can be used from within other extras (i.e. MIGX,
+ * Collections)
  *
  * @package colorpicker
  * @subpackage plugin
@@ -8,12 +12,14 @@
  * @var modX $modx
  */
 
+$eventName = $modx->event->name;
+
 $corePath = $modx->getOption('colorpicker.core_path', null, $modx->getOption('core_path') . 'components/colorpicker/');
 $colorpicker = $modx->getService('colorpicker', 'Colorpicker', $corePath . 'model/colorpicker/', array(
     'core_path' => $corePath
 ));
 
-switch ($modx->event->name) {
+switch ($eventName) {
     case 'OnManagerPageBeforeRender':
         $modx->controller->addLexiconTopic('colorpicker:default');
         $colorpicker->includeScriptAssets();

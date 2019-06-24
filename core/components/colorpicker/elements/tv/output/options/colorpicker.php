@@ -1,6 +1,6 @@
 <?php
 /**
- * Output Properties for Colorpicker
+ * Colorpicker Input Options Render
  *
  * @package colorpicker
  * @subpackage output properties
