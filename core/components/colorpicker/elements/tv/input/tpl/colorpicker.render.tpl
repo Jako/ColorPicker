@@ -7,9 +7,9 @@
         new Ext.ux.form.ColorPickerField({{/literal}
             applyTo: 'tv{$tv->id}',
             name: 'tv{$tv->id}',
-            value: '{$tv->value}',{literal}
+            value: '{$tv->value}',
             width: '100',
-            allowBlank: {$params.allowBlank},
+            allowBlank: {$params.allowBlank}{literal},
             listeners: {
                 change: {
                     fn: MODx.fireResourceFormChange,

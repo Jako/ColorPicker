@@ -1,9 +1,9 @@
 <?php
 /**
- * Colorpicker Input Options Render
+ * ColorPicker Output Options Render
  *
  * @package colorpicker
- * @subpackage output properties
+ * @subpackage outputoptions_render
  *
  * @var modX $modx
  */

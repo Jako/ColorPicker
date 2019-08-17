@@ -1,9 +1,9 @@
 <?php
 /**
- * Colorpicker Output Render
+ * ColorPicker Output Render
  *
  * @package colorpicker
- * @subpackage output render
+ * @subpackage output_render
  */
 
 class ColorPickerOutputRender extends modTemplateVarOutputRender

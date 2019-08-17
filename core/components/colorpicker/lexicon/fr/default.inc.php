@@ -7,7 +7,6 @@
  */
 
 $_lang['colorpicker'] = 'ColorPicker';
-$_lang['colorpicker.description'] = 'Sélecteur de couleur pour MODx Revolution';
 $_lang['colorpicker.format'] = 'Format';
 $_lang['colorpicker.format_desc'] = 'Format de couleur CSS';
 $_lang['colorpicker.format_hex'] = 'Hexadecimal';

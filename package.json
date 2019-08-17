@@ -1,6 +1,6 @@
 {
   "name": "colorpicker",
-  "description": "Colorpicker custom template variable",
+  "description": "ColorPicker Template Variable",
   "author": "Thomas Jakobi <thomas.jakobi@partout.info>",
   "private": true,
   "devDependencies": {

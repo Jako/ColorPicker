@@ -1,5 +1,5 @@
 /**
- * Colorpicker Custom Manager Page Script
+ * ColorPicker Custom Manager Page Script
  *
  * @package colorpicker
  * @subpackage script
@@ -15,4 +15,4 @@ Ext.extend(colorpicker, Ext.Component, {
 });
 Ext.reg('colorpicker', colorpicker);
 
-Colorpicker = new colorpicker();
+ColorPicker = new colorpicker();

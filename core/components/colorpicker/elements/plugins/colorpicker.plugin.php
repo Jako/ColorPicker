@@ -1,6 +1,6 @@
 <?php
 /**
- * Colorpicker Runtime Hooks
+ * ColorPicker Runtime Hooks
  *
  * Registers custom TV input & output types and includes javascripts on document
  * edit pages so that the TV can be used from within other extras (i.e. MIGX,
@@ -9,13 +9,22 @@
  * @package colorpicker
  * @subpackage plugin
  *
+ *
+ * @event OnManagerPageBeforeRender
+ * @event OnTVInputRenderList
+ * @event OnTVOutputRenderList
+ * @event OnTVInputPropertiesList
+ * @event OnTVOutputRenderPropertiesList
+ * @event OnDocFormRender
+ *
  * @var modX $modx
  */
 
 $eventName = $modx->event->name;
 
 $corePath = $modx->getOption('colorpicker.core_path', null, $modx->getOption('core_path') . 'components/colorpicker/');
-$colorpicker = $modx->getService('colorpicker', 'Colorpicker', $corePath . 'model/colorpicker/', array(
+/** @var ColorPicker $colorpicker */
+$colorpicker = $modx->getService('colorpicker', 'ColorPicker', $corePath . 'model/colorpicker/', array(
     'core_path' => $corePath
 ));
 

@@ -1,12 +1,12 @@
 <?php
 /**
- * Get list processor for Colorpicker
+ * Get list processor for ColorPicker
  *
  * @package colorpicker
  * @subpackage processor
  */
 
-class ColorpickerTVsGetListProcessor extends modObjectGetListProcessor
+class ColorPickerTVsGetListProcessor extends modObjectGetListProcessor
 {
     public $classKey = 'modTemplateVar';
     public $languageTopics = array('colorpicker:default');
@@ -15,4 +15,4 @@ class ColorpickerTVsGetListProcessor extends modObjectGetListProcessor
     public $objectType = 'modTemplateVar';
 }
 
-return 'ColorpickerTVsGetListProcessor';
+return 'ColorPickerTVsGetListProcessor';

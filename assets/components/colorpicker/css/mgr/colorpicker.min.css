@@ -1,6 +1,6 @@
 .x-cp-rgbpicker{background:red url(../../images/mask.png) no-repeat;width:182px;height:182px;margin:7px;float:left;cursor:pointer}.x-cp-rgbslider{position:relative;left:-7px;top:-7px;width:15px;height:15px;background-image:url(../../images/slider-rgb.gif)!important;background-repeat:no-repeat;cursor:pointer}.x-cp-huepicker{height:183px;width:9px;float:left;margin:7px 0 0 7px;background-image:url(../../images/hue.png)!important;background-repeat:no-repeat;cursor:pointer}.x-cp-hueslider{position:relative;left:-3px;top:-7px;width:15px;height:15px;background-image:url(../../images/slider-rgb.gif)!important;background-repeat:no-repeat;cursor:pointer}.x-cp-formcontainer{position:absolute;width:165px;border:none;margin:0;left:226px;top:10px}.x-cp-formcontainer .x-form-item label.x-form-item-label{padding:5px 0 0}.x-cp-formcontainer .x-form-item .x-form-num-field,.x-cp-formcontainer .x-form-item .x-form-text{padding:0 5px}.x-cp-formcontainer .x-form-item .x-form-num-field{text-align:center}.x-cp-formcontainer .x-form-label-left .x-form-item{padding-top:5px}.x-cp-formcontainer .x-panel-mc{padding:3px;border:none}.x-cp-formcontainer .x-cp-colorbox{margin:8px 9px 0 0;padding:5px 10px;width:46px;text-align:center}.x-cp-formcontainer .x-cp-pickcolor{display:block;width:121px}.x-cp-clearfloat{clear:both}.x-form-field-wrap .x-form-trigger.x-form-colorpicker-trigger:before{content:"\f1fb"}
 /*!
- * ColorPicker - Colorpicker custom template variable
- * Version: 1.0.3
- * Build date: 2019-06-24
+ * ColorPicker - ColorPicker Template Variable
+ * Version: 1.0.4
+ * Build date: 2019-08-17
  */

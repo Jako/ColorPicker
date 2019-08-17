@@ -1,47 +1,49 @@
 {
   "name": "ColorPicker",
   "lowCaseName": "colorpicker",
-  "description": "Colorpicker custom template variable",
-  "author": "Benjamin Vauchel",
-  "version": "1.0.3",
+  "description": "ColorPicker Template Variable",
+  "author": "Benjamin Vauchel, Thomas Jakobi",
+  "version": "1.0.4",
   "package": {
     "elements": {
       "plugins": [
         {
           "name": "ColorPicker",
           "file": "colorpicker.plugin.php",
+          "description": "ColorPicker runtime hooks - registers custom TV input & output types and includes javascripts on document edit pages.",
           "events": [
             "OnManagerPageBeforeRender",
+            "OnTVInputPropertiesList",
             "OnTVInputRenderList",
             "OnTVOutputRenderList",
-            "OnTVInputPropertiesList",
             "OnTVOutputRenderPropertiesList",
             "OnDocFormRender"
           ]
         }
       ]
-    },
-    "systemSettings": [
-      {
-        "key": "format",
-        "area": "site",
-        "value": "%e.| %B |%Y"
-      },
-      {
-        "key": "manager_format",
-        "area": "site",
-        "value": "j.| F |Y"
-      },
-      {
-        "key": "separator",
-        "area": "site",
-        "value": "&thinsp;–&thinsp;"
-      }
-    ]
+    }
   },
+  "dependencies": [
+    {
+      "name": "php",
+      "version": ">=5.6"
+    },
+    {
+      "name": "modx",
+      "version": ">=2.6"
+    }
+  ],
   "build": {
     "readme": "docs/readme.md",
     "license": "docs/license.md",
-    "changelog": "docs/changelog.md"
+    "changelog": "docs/changelog.md",
+    "setupOptions": {
+      "source": "setup.options.php"
+    },
+    "resolver": {
+      "after": [
+        "resolve.treehillstudio.php"
+      ]
+    }
   }
 }

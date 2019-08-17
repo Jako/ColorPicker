@@ -19,6 +19,10 @@ MODX Package Management
 
 Install via package manager, create a TV and change the input & output type to 'ColorPicker'
 
+## Documentation
+
+For more information please read the documentation on https://jako.github.io/ColorPicker/
+
 ## GitHub Repository
 
 https://github.com/Jako/ColorPicker

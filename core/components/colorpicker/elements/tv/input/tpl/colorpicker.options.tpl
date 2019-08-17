@@ -1,4 +1,4 @@
-<div id="tv-output-properties-form{$tv}"></div>
+<div id="tv-input-properties-form{$tv}"></div>
 <script type="text/javascript">
     // <![CDATA[{literal}
     var params = {
@@ -21,64 +21,19 @@
         border: false,
         labelAlign: 'top',
         items: [{
-            xtype: 'combo',
-            fieldLabel: _('colorpicker.format'),
-            description: MODx.expandHelp ? '' : _('colorpicker.format_desc'),
-            name: 'prop_color_format',
-            hiddenName: 'prop_color_format',
-            id: 'prop_color_format{/literal}{$tv}{literal}',
-            store: new Ext.data.SimpleStore({
-                fields: ['v', 'd'],
-                data: [
-                    ['hex', _('colorpicker.format_hex')],
-                    ['rgb', _('colorpicker.format_rgb')],
-                    ['hsl', _('colorpicker.format_hsl')]
-                ]
-            }),
-            displayField: 'd',
-            valueField: 'v',
-            mode: 'local',
-            editable: false,
-            forceSelection: true,
-            typeAhead: false,
-            triggerAction: 'all',
-            value: params['color_format'] || 'hex',
-            labelStyle: 'padding-top: 0',
+            xtype: 'combo-boolean',
+            fieldLabel: _('required'),
+            description: MODx.expandHelp ? '' : _('required_desc'),
+            name: 'inopt_allowBlank',
+            hiddenName: 'inopt_allowBlank',
+            id: 'inopt_allowBlank{/literal}{$tv}{literal}',
+            value: !(params['allowBlank'] === 0 || params['allowBlank'] === 'false'),
             anchor: '100%',
             listeners: oc
         }, {
             xtype: MODx.expandHelp ? 'label' : 'hidden',
-            forId: 'prop_color_format{/literal}{$tv}{literal}',
-            html: _('colorpicker.format_desc'),
-            cls: 'desc-under'
-        }, {
-            xtype: 'combo',
-            fieldLabel: _('colorpicker.output'),
-            description: MODx.expandHelp ? '' : _('colorpicker.output_desc'),
-            name: 'prop_color_output',
-            hiddenName: 'prop_color_output',
-            id: 'prop_color_output{/literal}{$tv}{literal}',
-            store: new Ext.data.SimpleStore({
-                fields: ['v', 'd'],
-                data: [
-                    ['css', _('colorpicker.output_css')],
-                    ['json', _('colorpicker.output_json')]
-                ]
-            }),
-            displayField: 'd',
-            valueField: 'v',
-            mode: 'local',
-            editable: false,
-            forceSelection: true,
-            typeAhead: false,
-            triggerAction: 'all',
-            value: params['color_output'] || 'css',
-            anchor: '100%',
-            listeners: oc
-        }, {
-            xtype: MODx.expandHelp ? 'label' : 'hidden',
-            forId: 'prop_color_output{/literal}{$tv}{literal}',
-            html: _('colorpicker.output_desc'),
+            forId: 'inopt_allowBlank{/literal}{$tv}{literal}',
+            html: _('required_desc'),
             cls: 'desc-under'
         }, {
             cls: "treehillstudio_about",
@@ -100,7 +55,7 @@
                 }
             }
         }],
-        renderTo: 'tv-output-properties-form{/literal}{$tv}{literal}'
+        renderTo: 'tv-input-properties-form{/literal}{$tv}{literal}'
     });
     // ]]>
 </script>

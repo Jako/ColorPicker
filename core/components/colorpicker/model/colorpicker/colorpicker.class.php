@@ -1,6 +1,6 @@
 <?php
 /**
- * Colorpicker classfile
+ * ColorPicker classfile
  *
  * Copyright 2011-2017 by Benjamin Vauchel <benjamin.vauchel@gmail.com>
  * Copyright 2017-2019 by Thomas Jakobi <thomas.jakobipartout.info>
@@ -10,9 +10,9 @@
  */
 
 /**
- * class Colorpicker
+ * class ColorPicker
  */
-class Colorpicker
+class ColorPicker
 {
     /**
      * A reference to the modX instance
@@ -30,7 +30,7 @@ class Colorpicker
      * The version
      * @var string $version
      */
-    public $version = '1.0.3';
+    public $version = '1.0.4';
 
     /**
      * The class options
@@ -39,7 +39,7 @@ class Colorpicker
     public $options = array();
 
     /**
-     * Colorpicker constructor
+     * ColorPicker constructor
      *
      * @param modX $modx A reference to the modX instance.
      * @param array $options An array of options. Optional.
@@ -125,6 +125,6 @@ class Colorpicker
             $this->modx->controller->addJavascript($jsUrl . 'colorpicker.min.js?v=v' . $this->version);
             $this->modx->controller->addCss($cssUrl . 'colorpicker.min.css?v=v' . $this->version);
         }
-        $this->modx->controller->addHtml('<script type="text/javascript">Colorpicker.config = ' . json_encode($this->options, JSON_PRETTY_PRINT) . ';</script>');
+        $this->modx->controller->addHtml('<script type="text/javascript">ColorPicker.config = ' . json_encode($this->options, JSON_PRETTY_PRINT) . ';</script>');
     }
 }
