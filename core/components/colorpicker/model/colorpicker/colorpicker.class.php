@@ -44,9 +44,9 @@ class ColorPicker
      * @param modX $modx A reference to the modX instance.
      * @param array $options An array of options. Optional.
      */
-    function __construct(modX &$modx, $options = array())
+    public function __construct(modX &$modx, $options = array())
     {
-        $this->modx =& $modx;
+        $this->modx = &$modx;
         $this->namespace = $this->getOption('namespace', $options, $this->namespace);
 
         $corePath = $this->getOption('core_path', $options, $this->modx->getOption('core_path') . 'components/' . $this->namespace . '/');

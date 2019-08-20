@@ -112,7 +112,7 @@ module.exports = function (grunt) {
                 files: [
                     'source/**/*.scss'
                 ],
-                tasks: ['sass', 'cssmin', 'usebanner:css']
+                tasks: ['sass', 'postcss', 'cssmin', 'usebanner:css']
             },
             config: {
                 files: [
@@ -143,6 +143,18 @@ module.exports = function (grunt) {
                     replacements: [{
                         pattern: /version = '\d+.\d+.\d+[-a-z0-9]*'/ig,
                         replacement: 'version = \'' + '<%= modx.version %>' + '\''
+                    }]
+                }
+            },
+            inputoptions: {
+                files: [{
+                    src: 'core/components/colorpicker/elements/tv/input/tpl/colorpicker.options.tpl',
+                    dest: 'core/components/colorpicker/elements/tv/input/tpl/colorpicker.options.tpl'
+                }],
+                options: {
+                    replacements: [{
+                        pattern: /&copy; 2017(-\d{4})?/g,
+                        replacement: '&copy; ' + (new Date().getFullYear() > 2017 ? '2017-' : '') + new Date().getFullYear()
                     }]
                 }
             },

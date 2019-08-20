@@ -9,7 +9,6 @@
  * @package colorpicker
  * @subpackage plugin
  *
- *
  * @event OnManagerPageBeforeRender
  * @event OnTVInputRenderList
  * @event OnTVOutputRenderList

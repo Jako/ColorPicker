@@ -1,6 +1,6 @@
 <?php
 /**
- * Default Lexicon Topic
+ * Default Lexicon Entries for ColorPicker
  *
  * @package colorpicker
  * @subpackage lexicon
