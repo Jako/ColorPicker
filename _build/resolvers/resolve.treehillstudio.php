@@ -2,7 +2,7 @@
 /**
  * Resolves install statistics
  *
- * @package agenda
+ * @package colorpicker
  * @subpackage build
  *
  * @var mixed $object
