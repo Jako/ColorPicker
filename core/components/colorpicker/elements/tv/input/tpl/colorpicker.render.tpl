@@ -9,7 +9,7 @@
             name: 'tv{$tv->id}',
             value: '{$tv->value}',
             width: '100',
-            allowBlank: {$params.allowBlank}{literal},
+            allowBlank: {if $params.allowBlank == 1 || $params.allowBlank == 'true'}true{else}false{/if},
             listeners: {
                 change: {
                     fn: MODx.fireResourceFormChange,
