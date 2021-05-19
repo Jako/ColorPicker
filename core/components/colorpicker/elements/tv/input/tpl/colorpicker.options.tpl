@@ -1,4 +1,3 @@
-<div id="tv-input-properties-form{$tv}"></div>
 <script type="text/javascript">
     // <![CDATA[{literal}
     var params = {
@@ -16,10 +15,16 @@
     MODx.load({
         xtype: 'panel',
         layout: 'form',
-        autoHeight: true,
-        cls: 'form-with-labels',
+        applyTo: 'modx-input-props',
         border: false,
         labelAlign: 'top',
+        listeners: {
+            afterrender: function (component) {
+                Ext.getCmp('modx-panel-tv-input-properties').addListener('resize', function () {
+                    component.setWidth(Ext.getCmp('modx-input-props').getWidth()).doLayout();
+                });
+            }
+        },
         items: [{
             xtype: 'combo-boolean',
             fieldLabel: _('required'),

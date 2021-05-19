@@ -125,6 +125,6 @@ class ColorPicker
             $this->modx->controller->addJavascript($jsUrl . 'colorpicker.min.js?v=v' . $this->version);
             $this->modx->controller->addCss($cssUrl . 'colorpicker.min.css?v=v' . $this->version);
         }
-        $this->modx->controller->addHtml('<script type="text/javascript">ColorPicker.config = ' . json_encode($this->options, JSON_PRETTY_PRINT) . ';</script>');
+        $this->modx->controller->addHtml('<script type="text/javascript">ColorPicker.config = ' . json_encode($this->options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . ';</script>');
     }
 }

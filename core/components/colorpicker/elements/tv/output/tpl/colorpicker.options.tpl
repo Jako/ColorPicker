@@ -1,4 +1,3 @@
-<div id="tv-output-properties-form{$tv}"></div>
 <script type="text/javascript">
     // <![CDATA[{literal}
     var params = {
@@ -16,77 +15,95 @@
     MODx.load({
         xtype: 'panel',
         layout: 'form',
-        autoHeight: true,
-        cls: 'form-with-labels',
+        applyTo: 'modx-widget-props',
         border: false,
         labelAlign: 'top',
+        listeners: {
+            afterrender: function (component) {
+                Ext.getCmp('modx-panel-tv-input-properties').addListener('resize', function () {
+                    component.setWidth(Ext.getCmp('modx-widget-props').getWidth()).doLayout();
+                });
+            }
+        },
         items: [{
-            xtype: 'combo',
-            fieldLabel: _('colorpicker.format'),
-            description: MODx.expandHelp ? '' : _('colorpicker.format_desc'),
-            name: 'prop_color_format',
-            hiddenName: 'prop_color_format',
-            id: 'prop_color_format{/literal}{$tv}{literal}',
-            store: new Ext.data.SimpleStore({
-                fields: ['v', 'd'],
-                data: [
-                    ['hex', _('colorpicker.format_hex')],
-                    ['rgb', _('colorpicker.format_rgb')],
-                    ['hsl', _('colorpicker.format_hsl')]
-                ]
-            }),
-            displayField: 'd',
-            valueField: 'v',
-            mode: 'local',
-            editable: false,
-            forceSelection: true,
-            typeAhead: false,
-            triggerAction: 'all',
-            value: params['color_format'] || 'hex',
-            labelStyle: 'padding-top: 0',
-            anchor: '100%',
-            listeners: oc
-        }, {
-            xtype: MODx.expandHelp ? 'label' : 'hidden',
-            forId: 'prop_color_format{/literal}{$tv}{literal}',
-            html: _('colorpicker.format_desc'),
-            cls: 'desc-under'
-        }, {
-            xtype: 'combo',
-            fieldLabel: _('colorpicker.output'),
-            description: MODx.expandHelp ? '' : _('colorpicker.output_desc'),
-            name: 'prop_color_output',
-            hiddenName: 'prop_color_output',
-            id: 'prop_color_output{/literal}{$tv}{literal}',
-            store: new Ext.data.SimpleStore({
-                fields: ['v', 'd'],
-                data: [
-                    ['css', _('colorpicker.output_css')],
-                    ['json', _('colorpicker.output_json')]
-                ]
-            }),
-            displayField: 'd',
-            valueField: 'v',
-            mode: 'local',
-            editable: false,
-            forceSelection: true,
-            typeAhead: false,
-            triggerAction: 'all',
-            value: params['color_output'] || 'css',
-            anchor: '100%',
-            listeners: oc
-        }, {
-            xtype: MODx.expandHelp ? 'label' : 'hidden',
-            forId: 'prop_color_output{/literal}{$tv}{literal}',
-            html: _('colorpicker.output_desc'),
-            cls: 'desc-under'
+            layout: 'column',
+            items: [{
+                columnWidth: .5,
+                layout: 'form',
+                labelAlign: 'top',
+                items: [{
+                    xtype: 'combo',
+                    fieldLabel: _('colorpicker.format'),
+                    description: MODx.expandHelp ? '' : _('colorpicker.format_desc'),
+                    name: 'prop_color_format',
+                    hiddenName: 'prop_color_format',
+                    id: 'prop_color_format{/literal}{$tv}{literal}',
+                    store: new Ext.data.SimpleStore({
+                        fields: ['v', 'd'],
+                        data: [
+                            ['hex', _('colorpicker.format_hex')],
+                            ['rgb', _('colorpicker.format_rgb')],
+                            ['hsl', _('colorpicker.format_hsl')]
+                        ]
+                    }),
+                    displayField: 'd',
+                    valueField: 'v',
+                    mode: 'local',
+                    editable: false,
+                    forceSelection: true,
+                    typeAhead: false,
+                    triggerAction: 'all',
+                    value: params['color_format'] || 'hex',
+                    anchor: '100%',
+                    listeners: oc
+                }, {
+                    xtype: MODx.expandHelp ? 'label' : 'hidden',
+                    forId: 'prop_color_format{/literal}{$tv}{literal}',
+                    html: _('colorpicker.format_desc'),
+                    cls: 'desc-under'
+                }]
+            }, {
+                columnWidth: .5,
+                layout: 'form',
+                labelAlign: 'top',
+                items: [{
+                    xtype: 'combo',
+                    fieldLabel: _('colorpicker.output'),
+                    description: MODx.expandHelp ? '' : _('colorpicker.output_desc'),
+                    name: 'prop_color_output',
+                    hiddenName: 'prop_color_output',
+                    id: 'prop_color_output{/literal}{$tv}{literal}',
+                    store: new Ext.data.SimpleStore({
+                        fields: ['v', 'd'],
+                        data: [
+                            ['css', _('colorpicker.output_css')],
+                            ['json', _('colorpicker.output_json')]
+                        ]
+                    }),
+                    displayField: 'd',
+                    valueField: 'v',
+                    mode: 'local',
+                    editable: false,
+                    forceSelection: true,
+                    typeAhead: false,
+                    triggerAction: 'all',
+                    value: params['color_output'] || 'css',
+                    anchor: '100%',
+                    listeners: oc
+                }, {
+                    xtype: MODx.expandHelp ? 'label' : 'hidden',
+                    forId: 'prop_color_output{/literal}{$tv}{literal}',
+                    html: _('colorpicker.output_desc'),
+                    cls: 'desc-under'
+                }]
+            }]
         }, {
             cls: "treehillstudio_about",
             html: '<img width="133" height="40" src="' + ColorPicker.config.assetsUrl + 'images/treehill-studio-small.png"' + ' srcset="' + ColorPicker.config.assetsUrl + 'images/treehill-studio-small@2x.png 2x" alt="Treehill Studio">',
             listeners: {
                 afterrender: function (component) {
                     component.getEl().select('img').on('click', function () {
-                        var msg = '<span style="display: inline-block; text-align: center;">&copy; 2011-2017 by Benjamin Vauchel <a href="https://github.com/benjamin-vauchel" target="_blank">github.com/benjamin-vauchel</a><br>' +
+                        var msg = '<span style="display: inline-block; text-align: center">&copy; 2011-2017 by Benjamin Vauchel <a href="https://github.com/benjamin-vauchel" target="_blank">github.com/benjamin-vauchel</a><br>' +
                                 '<img src="' + ColorPicker.config.assetsUrl + 'images/treehill-studio.png" srcset="' + ColorPicker.config.assetsUrl + 'images/treehill-studio@2x.png 2x" alt="Treehill Studio" style="margin-top: 10px"><br>' +
                                 '&copy; 2017-2020 by <a href="https://treehillstudio.com" target="_blank">treehillstudio.com</a></span>';
                         Ext.Msg.show({
