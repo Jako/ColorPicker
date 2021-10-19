@@ -26,7 +26,7 @@ class ColorPickerInputRender extends modTemplateVarInputRender
      */
     public function getLexiconTopics()
     {
-        return array('daterangetv:default');
+        return array('colorpicker:default');
     }
 
     /**
