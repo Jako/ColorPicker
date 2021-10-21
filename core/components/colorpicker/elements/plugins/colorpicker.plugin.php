@@ -47,4 +47,4 @@ switch ($eventName) {
     case 'OnDocFormRender':
         $colorpicker->includeScriptAssets();
         break;
-};
+}
