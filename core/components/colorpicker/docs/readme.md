@@ -3,7 +3,7 @@
 Color select custom template variable in MODX Revolution.
 
 - Author: Benjamin Vauchel <benjamin.vauchel@gmail.com>
-- Maintainer and further development: Thomas Jakobi <thomas.jakobi@partout.info>
+- Maintainer and further development: Thomas Jakobi <office@treehillstudio.com>
 - License: GNU GPLv2
 
 ## Features
