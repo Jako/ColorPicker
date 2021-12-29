@@ -99,7 +99,7 @@
             }]
         }, {
             cls: "treehillstudio_about",
-            html: '<img width="133" height="40" src="' + ColorPicker.config.assetsUrl + 'images/treehill-studio-small.png"' + ' srcset="' + ColorPicker.config.assetsUrl + 'images/treehill-studio-small@2x.png 2x" alt="Treehill Studio">',
+            html: '<img width="146" height="40" src="' + ColorPicker.config.assetsUrl + 'images/treehill-studio-small.png"' + ' srcset="' + ColorPicker.config.assetsUrl + 'images/treehill-studio-small@2x.png 2x" alt="Treehill Studio">',
             listeners: {
                 afterrender: function (component) {
                     component.getEl().select('img').on('click', function () {
@@ -111,7 +111,7 @@
                             msg: msg,
                             buttons: Ext.Msg.OK,
                             cls: 'treehillstudio_window',
-                            width: 330
+                            width: 358
                         });
                     });
                 }
