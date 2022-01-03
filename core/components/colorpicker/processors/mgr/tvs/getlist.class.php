@@ -3,7 +3,7 @@
  * Get list processor for ColorPicker
  *
  * @package colorpicker
- * @subpackage processor
+ * @subpackage processors
  */
 
 class ColorPickerTVsGetListProcessor extends modObjectGetListProcessor
