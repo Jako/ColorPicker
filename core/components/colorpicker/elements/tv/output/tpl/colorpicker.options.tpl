@@ -19,9 +19,9 @@
         border: false,
         labelAlign: 'top',
         listeners: {
-            afterrender: function (component) {
+            afterrender: function (el) {
                 Ext.getCmp('modx-panel-tv-input-properties').addListener('resize', function () {
-                    component.setWidth(Ext.getCmp('modx-widget-props').getWidth()).doLayout();
+                    el.setWidth(Ext.getCmp('modx-widget-props').getWidth()).doLayout();
                 });
             }
         },
@@ -101,8 +101,8 @@
             cls: "treehillstudio_about",
             html: '<img width="146" height="40" src="' + ColorPicker.config.assetsUrl + 'images/treehill-studio-small.png"' + ' srcset="' + ColorPicker.config.assetsUrl + 'images/treehill-studio-small@2x.png 2x" alt="Treehill Studio">',
             listeners: {
-                afterrender: function (component) {
-                    component.getEl().select('img').on('click', function () {
+                afterrender: function () {
+                    this.getEl().select('img').on('click', function () {
                         var msg = '<span style="display: inline-block; text-align: center">&copy; 2011-2017 by Benjamin Vauchel <a href="https://github.com/benjamin-vauchel" target="_blank">github.com/benjamin-vauchel</a><br>' +
                                 '<img src="' + ColorPicker.config.assetsUrl + 'images/treehill-studio.png" srcset="' + ColorPicker.config.assetsUrl + 'images/treehill-studio@2x.png 2x" alt="Treehill Studio" style="margin-top: 10px"><br>' +
                                 '&copy; 2017-2021 by <a href="https://treehillstudio.com" target="_blank">treehillstudio.com</a></span>';
