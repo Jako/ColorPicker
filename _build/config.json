@@ -9,8 +9,8 @@
       "plugins": [
         {
           "name": "ColorPicker",
-          "file": "colorpicker.plugin.php",
           "description": "ColorPicker runtime hooks - registers custom TV input & output types and includes javascripts on document edit pages.",
+          "file": "colorpicker.plugin.php",
           "events": [
             "OnManagerPageBeforeRender",
             "OnTVInputPropertiesList",
