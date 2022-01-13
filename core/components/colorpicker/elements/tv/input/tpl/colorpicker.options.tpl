@@ -62,6 +62,7 @@
         }],
         renderTo: 'tv-input-properties-form{/literal}{$tv}{literal}'
     });
+    MODx.helpUrl = 'https://jako.github.io/ColorPicker/usage/';
     // ]]>
 </script>
 {/literal}
