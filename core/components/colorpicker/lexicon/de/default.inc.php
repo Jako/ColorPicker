@@ -28,5 +28,5 @@ $_lang['colorpicker.output_type_desc'] = 'Beispiele für die CSS-Ausgabe sind un
 $_lang['colorpicker.output_type_json'] = 'JSON';
 $_lang['colorpicker.swatches'] = 'Farbfelder';
 $_lang['colorpicker.swatchesOnly'] = 'Nur Farbfelder';
-$_lang['colorpicker.swatchesOnly_desc'] = 'Setzen Sie diesen Wert auf true, um alle Farbauswahl-Widgets (Spektrum, Farbton, ...) mit Ausnahme der Farbfelder auszublenden.';
+$_lang['colorpicker.swatchesOnly_desc'] = 'Setzen Sie diesen Wert auf true, um alle Farbauswahl-Widgets (Spektrum, Farbton, …) mit Ausnahme der Farbfelder auszublenden.';
 $_lang['colorpicker.output_format_desc'] = 'Legen Sie das bevorzugte Format der Farbzeichenfolge fest. Hex: gibt #RRGGBB oder #RRGGBBAA aus. RGB: gibt rgb(R,G,B) oder rgba(R,G,B,A) aus. HSL: gibt hsl(H,S,L) oder hsla(H,S,L,A) aus.';
