@@ -27,6 +27,6 @@ $_lang['colorpicker.output_type_json'] = 'JSON';
 $_lang['colorpicker.swatches'] = 'Échantillons';
 $_lang['colorpicker.swatches_desc'] = 'Un tableau codé JSON des échantillons de couleurs souhaités à afficher. Si la liste est vide, les échantillons sont désactivés. Exemple : ["#264653", "#2a9d8f", "#e9c46a", "rgb(244,162,97)", "#e76f51", "#d62828", "marine", "#07b", "#0096c7" , "#00b4d880", "rgba(0,119,182,0.8)"]';
 $_lang['colorpicker.swatchesOnly'] = 'Échantillons seulement';
-$_lang['colorpicker.swatchesOnly_desc'] = 'Mettez cette valeur à true pour masquer tous les widgets de sélection de couleur (spectre, teinte, ...) à l\'exception des échantillons de couleur.';
+$_lang['colorpicker.swatchesOnly_desc'] = 'Mettez cette valeur à true pour masquer tous les widgets de sélection de couleur (spectre, teinte, …) à l\'exception des échantillons de couleur.';
 $_lang['colorpicker.output_format_desc'] = 'Définit le format préféré de la chaîne de couleur. Hex : produit #RRGGBB ou #RRGGBBAA. RGB : sort rgb(R,G,B) ou rgba(R,G,B,A). HSL : sort hsl(H,S,L) ou hsla(H,S,L,A).';
 $_lang['colorpicker.output_type'] = 'Sortie';
