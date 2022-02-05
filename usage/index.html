@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#output-options" class="md-skip">
+        <a href="#input-options" class="md-skip">
           Skip to content
         </a>
       
@@ -312,6 +312,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#input-options" class="md-nav__link">
+    Input Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#output-options" class="md-nav__link">
     Output Options
   </a>
@@ -365,6 +372,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#input-options" class="md-nav__link">
+    Input Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#output-options" class="md-nav__link">
     Output Options
   </a>
@@ -390,7 +404,41 @@
                 
                   <h1>Usage</h1>
                 
-                <h2 id="output-options">Output Options</h2>
+                <h2 id="input-options">Input Options</h2>
+<p>The following input options could be set in template variable settings if the
+input type is set to <code>ColorPicker</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Format</td>
+<td>Set the preferred color string format.<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td>Hex</td>
+</tr>
+<tr>
+<td>Show Alpha</td>
+<td>Enable or disable alpha support. When disabled, the alpha value is removed from the existing color value in all formats.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Swatches Only</td>
+<td>Set this value to true to hide all color selection widgets (spectrum, hue, …) except the color swatches.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Swatches</td>
+<td>A JSON encoded array of the desired color swatches to be displayed. If the list is empty, the swatches are disabled.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="output-options">Output Options</h2>
 <p>The following output options could be set in template variable settings if the
 output type is set to <code>ColorPicker</code>. Another possibility is to
 assign the settings as properties to the MODX tag<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
@@ -405,12 +453,17 @@ assign the settings as properties to the MODX tag<sup id="fnref:1"><a class="foo
 <tbody>
 <tr>
 <td>Format</td>
-<td>CSS color format</td>
-<td>Hexadecimal</td>
+<td>Set the preferred color string format.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td>Hex</td>
+</tr>
+<tr>
+<td>Alpha</td>
+<td>Enable or disable alpha output support.</td>
+<td>No</td>
 </tr>
 <tr>
 <td>Output</td>
-<td>Output type<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</td>
+<td>The output type.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</td>
 <td>CSS</td>
 </tr>
 </tbody>
@@ -419,10 +472,16 @@ assign the settings as properties to the MODX tag<sup id="fnref:1"><a class="foo
 <hr />
 <ol>
 <li id="fn:1">
-<p>The colorpicker template tariable could be formatted in template or template chunks with the following tag syntax: <code>[[*tvname? &amp;color_format=`hex` &amp;color_output=`css`]]</code>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Hex: outputs #RRGGBB or #RRGGBBAA. RGB: outputs rgb(R,G,B) or rgba(R,G,B,A). HSL: outputs hsl(H,S,L) or hsla(H,S,L,A). Mixed: outputs #RRGGBB when alpha is 1; otherwise rgba(R,G,B,A).&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Examples of CSS output: <code>#FFFFFF</code> or <code>rgb(255,255,255)</code> or <code>hsl(1,1,1)</code>. Examples of JSON output: <code>{"FF","FF","FF"}</code> or <code>{255,255,255}</code> or <code>{1,1,1}</code>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Example: <code>["#264653", "#2a9d8f", "#e9c46a", "rgb(244,162,97)", "#e76f51", "#d62828", "navy", "#07b", "#0096c7", "#00b4d880", "rgba(0,119,182,0.8)"]</code>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Hex: outputs #RRGGBB or #RRGGBBAA. RGB: outputs rgb(R,G,B) or rgba(R,G,B,A). HSL: outputs hsl(H,S,L) or hsla(H,S,L,A).&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Examples for CSS output are described under Format. Example for JSON output: Hex: ["80","ff","00"] or ["80","ff","00",0.5], RGB: [128,255,0] or [128,255,0,0.5], HSL: [90,"100%","50%"] or [90,"100%","50%",0.5]&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -482,7 +541,7 @@ assign the settings as properties to the MODX tag<sup id="fnref:1"><a class="foo
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            &copy; 2017-2021 <a href="https://treehillstudio.com">Treehill Studio</a>
+            &copy; 2017-2022 <a href="https://treehillstudio.com">Treehill Studio</a>
           </div>
         
         Made with
