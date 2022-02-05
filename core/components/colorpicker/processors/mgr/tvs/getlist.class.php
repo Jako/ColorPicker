@@ -9,7 +9,7 @@
 class ColorPickerTVsGetListProcessor extends modObjectGetListProcessor
 {
     public $classKey = 'modTemplateVar';
-    public $languageTopics = array('colorpicker:default');
+    public $languageTopics = ['colorpicker:default'];
     public $defaultSortField = 'name';
     public $defaultSortDirection = 'ASC';
     public $objectType = 'modTemplateVar';

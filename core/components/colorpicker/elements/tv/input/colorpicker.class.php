@@ -26,7 +26,7 @@ class ColorPickerInputRender extends modTemplateVarInputRender
      */
     public function getLexiconTopics()
     {
-        return array('colorpicker:default');
+        return ['colorpicker:default'];
     }
 
     /**
@@ -36,12 +36,13 @@ class ColorPickerInputRender extends modTemplateVarInputRender
      * @param array $params
      * @return void
      */
-    public function process($value, array $params = array())
+    public function process($value, array $params = [])
     {
-        $this->modx->controller->addLexiconTopic('colorpicker:tvrenders');
-
-        // Set params
-        $params['allowBlank'] = ($params['allowBlank'] === 'false' || $params['allowBlank'] === 0 || $params['allowBlank'] === false) ? false : true;
+        // set params
+        $params['allowBlank'] = $params['allowBlank'] ? 'true' : 'false';
+        $params['alpha'] = $params['alpha'] ? 'true' : 'false';
+        $params['swatchesOnly'] = $params['swatchesOnly'] ? 'true' : 'false';
+        $params['swatches'] = json_decode($params['swatches']) ? $params['swatches'] : '[]';
         $this->setPlaceholder('params', $params);
     }
 }

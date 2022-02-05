@@ -6,35 +6,46 @@
         {/foreach}{literal}
     };
     var oc = {
-        'change': {
+        change: {
             fn: function () {
                 Ext.getCmp('modx-panel-tv').markDirty();
             }, scope: this
         }
     };
+    var tvelements = Ext.getCmp('modx-tv-elements');
+    if (tvelements) {
+        tvelements.hide();
+        if (MODx.expandHelp) {
+            tvelements.nextSibling('.desc-under').hide();
+        }
+    }
     MODx.load({
         xtype: 'panel',
         layout: 'form',
         applyTo: 'modx-widget-props',
+        cls: 'colorpicker-props',
         border: false,
         labelAlign: 'top',
         listeners: {
-            afterrender: function (el) {
-                Ext.getCmp('modx-panel-tv-input-properties').addListener('resize', function () {
-                    el.setWidth(Ext.getCmp('modx-widget-props').getWidth()).doLayout();
+            afterrender: function (component) {
+                Ext.getCmp('modx-panel-tv-output-properties').addListener('resize', function () {
+                    component.setWidth(Ext.getCmp('modx-widget-props').getWidth()).doLayout();
                 });
-            }
+                Ext.getCmp('modx-tv-tabs').addListener('tabchange', function () {
+                    component.setWidth(Ext.getCmp('modx-widget-props').getWidth()).doLayout();
+                });
+            },
         },
         items: [{
             layout: 'column',
             items: [{
-                columnWidth: .5,
+                columnWidth: .33,
                 layout: 'form',
                 labelAlign: 'top',
                 items: [{
                     xtype: 'combo',
-                    fieldLabel: _('colorpicker.format'),
-                    description: MODx.expandHelp ? '' : _('colorpicker.format_desc'),
+                    fieldLabel: _('colorpicker.output_format'),
+                    description: MODx.expandHelp ? '' : _('colorpicker.output_format_desc'),
                     name: 'prop_color_format',
                     hiddenName: 'prop_color_format',
                     id: 'prop_color_format{/literal}{$tv}{literal}',
@@ -59,25 +70,45 @@
                 }, {
                     xtype: MODx.expandHelp ? 'label' : 'hidden',
                     forId: 'prop_color_format{/literal}{$tv}{literal}',
-                    html: _('colorpicker.format_desc'),
+                    html: _('colorpicker.output_format_desc'),
                     cls: 'desc-under'
                 }]
             }, {
-                columnWidth: .5,
+                columnWidth: .33,
+                layout: 'form',
+                labelAlign: 'top',
+                items: [{
+                    xtype: 'combo-boolean',
+                    fieldLabel: _('colorpicker.output_alpha'),
+                    description: MODx.expandHelp ? '' : _('colorpicker.output_alpha_desc'),
+                    name: 'prop_color_alpha',
+                    hiddenName: 'prop_color_alpha',
+                    id: 'prop_color_alpha{/literal}{$tv}{literal}',
+                    value: (params['color_alpha'] === 1 || params['color_alpha'] === 'true'),
+                    anchor: '100%',
+                    listeners: oc
+                }, {
+                    xtype: MODx.expandHelp ? 'label' : 'hidden',
+                    forId: 'prop_color_alpha{/literal}{$tv}{literal}',
+                    html: _('colorpicker.output_alpha_desc'),
+                    cls: 'desc-under'
+                }]
+            }, {
+                columnWidth: .34,
                 layout: 'form',
                 labelAlign: 'top',
                 items: [{
                     xtype: 'combo',
-                    fieldLabel: _('colorpicker.output'),
-                    description: MODx.expandHelp ? '' : _('colorpicker.output_desc'),
+                    fieldLabel: _('colorpicker.output_type'),
+                    description: MODx.expandHelp ? '' : _('colorpicker.output_type_desc'),
                     name: 'prop_color_output',
                     hiddenName: 'prop_color_output',
                     id: 'prop_color_output{/literal}{$tv}{literal}',
                     store: new Ext.data.SimpleStore({
                         fields: ['v', 'd'],
                         data: [
-                            ['css', _('colorpicker.output_css')],
-                            ['json', _('colorpicker.output_json')]
+                            ['css', _('colorpicker.output_type_css')],
+                            ['json', _('colorpicker.output_type_json')]
                         ]
                     }),
                     displayField: 'd',
@@ -93,19 +124,19 @@
                 }, {
                     xtype: MODx.expandHelp ? 'label' : 'hidden',
                     forId: 'prop_color_output{/literal}{$tv}{literal}',
-                    html: _('colorpicker.output_desc'),
+                    html: _('colorpicker.output_type_desc'),
                     cls: 'desc-under'
                 }]
             }]
         }, {
             cls: "treehillstudio_about",
-            html: '<img width="146" height="40" src="' + ColorPicker.config.assetsUrl + 'images/treehill-studio-small.png"' + ' srcset="' + ColorPicker.config.assetsUrl + 'images/treehill-studio-small@2x.png 2x" alt="Treehill Studio">',
+            html: '<img width="146" height="40" src="' + ColorPicker.config.assetsUrl + 'img/treehill-studio-small.png"' + ' srcset="' + ColorPicker.config.assetsUrl + 'img/treehill-studio-small@2x.png 2x" alt="Treehill Studio">',
             listeners: {
-                afterrender: function () {
-                    this.getEl().select('img').on('click', function () {
+                afterrender: function (component) {
+                    component.getEl().select('img').on('click', function () {
                         var msg = '<span style="display: inline-block; text-align: center">&copy; 2011-2017 by Benjamin Vauchel <a href="https://github.com/benjamin-vauchel" target="_blank">github.com/benjamin-vauchel</a><br>' +
-                                '<img src="' + ColorPicker.config.assetsUrl + 'images/treehill-studio.png" srcset="' + ColorPicker.config.assetsUrl + 'images/treehill-studio@2x.png 2x" alt="Treehill Studio" style="margin-top: 10px"><br>' +
-                                '&copy; 2017-2021 by <a href="https://treehillstudio.com" target="_blank">treehillstudio.com</a></span>';
+                                '<img src="' + ColorPicker.config.assetsUrl + 'img/treehill-studio.png" srcset="' + ColorPicker.config.assetsUrl + 'img/treehill-studio@2x.png 2x" alt="Treehill Studio" style="margin-top: 10px"><br>' +
+                                '&copy; 2017-2022 by <a href="https://treehillstudio.com" target="_blank">treehillstudio.com</a></span>';
                         Ext.Msg.show({
                             title: _('colorpicker') + ' ' + ColorPicker.config.version,
                             msg: msg,
@@ -116,8 +147,7 @@
                     });
                 }
             }
-        }],
-        renderTo: 'tv-output-properties-form{/literal}{$tv}{literal}'
+        }]
     });
     MODx.helpUrl = 'https://jako.github.io/ColorPicker/usage/';
     // ]]>

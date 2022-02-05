@@ -4,8 +4,8 @@ Color select custom template variable in MODX Revolution.
 
 ### Requirements
 
-* MODX Revolution 2.5+
-* PHP v5.3+
+* MODX Revolution 2.6+
+* PHP 7.2+
 
 ### Features
 

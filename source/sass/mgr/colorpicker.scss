@@ -1,5 +1,7 @@
+$treehillstudio-color: #cbd842;
+
 .x-cp-rgbpicker {
-  background: red url(../../images/mask.png) no-repeat;
+  background: red url(../../img/mask.png) no-repeat;
   width: 182px;
   height: 182px;
   margin: 7px;
@@ -13,7 +15,7 @@
   top: -7px;
   width: 15px;
   height: 15px;
-  background-image: url(../../images/slider-rgb.gif) !important;
+  background-image: url(../../img/slider-rgb.gif) !important;
   background-repeat: no-repeat;
   cursor: pointer;
 }
@@ -23,7 +25,7 @@
   width: 9px;
   float: left;
   margin: 7px 0 0 7px;
-  background-image: url(../../images/hue.png) !important;
+  background-image: url(../../img/hue.png) !important;
   background-repeat: no-repeat;
   cursor: pointer;
 }
@@ -92,3 +94,31 @@
     }
   }
 }
+
+.treehillstudio_about {
+  cursor: pointer;
+  height: 40px;
+  opacity: .25;
+  transition: opacity 0.5s;
+  margin-top: 20px;
+  &:hover {
+    opacity: 1;
+  }
+  .x-panel-body {
+    text-align: right;
+  }
+}
+
+.treehillstudio_window {
+  a {
+    color: darken($treehillstudio-color, 10);
+    text-decoration: none;
+    &:hover {
+      color: darken($treehillstudio-color, 25);
+    }
+  }
+}
+
+@import '../../../node_modules/@melloware/coloris/dist/coloris';
+@import 'coloris_modx';
+@import 'modx3';

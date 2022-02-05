@@ -26,3 +26,13 @@ For more information please read the documentation on https://jako.github.io/Col
 ## GitHub Repository
 
 https://github.com/Jako/ColorPicker
+
+## Translations
+
+Translations of ColorPicker can be made on [Weblate](https://hosted.weblate.org/projects/modx-agenda/)
+
+## Third party licenses
+
+This extra includes third party software, for which we are thankful.
+
+- Symfony YAML, MIT License

@@ -1,0 +1,19 @@
+$modx3-green: #6cb24a;
+$modx3-green-darken: #528738;
+$modx3-blue: #234368;
+
+.clr-modx3 {
+  .clr-clear {
+    border-radius: 3px;
+    transition: all 0.25s;
+    background-color: $modx3-green;
+    background-image: initial;
+    box-shadow: none;
+    color: #ffffff;
+    margin: 0 15px 15px auto;
+    &:hover {
+      background-color: $modx3-green-darken;
+      background-image: initial;
+    }
+  }
+}

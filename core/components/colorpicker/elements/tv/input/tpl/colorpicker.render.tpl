@@ -4,16 +4,37 @@
 <script type="text/javascript">
     // <![CDATA[{literal}
     Ext.onReady(function () {
-        new Ext.ux.form.ColorPickerField({{/literal}
+        MODx.load({{/literal}
+            xtype: 'textfield',
             applyTo: 'tv{$tv->id}',
             name: 'tv{$tv->id}',
             value: '{$tv->value}',
-            width: '100',
-            allowBlank: {if $params.allowBlank == 1 || $params.allowBlank == 'true'}true{else}false{/if},{literal}
+            cls: 'coloris',
+            width: '150',
+            allowBlank: {$params.allowBlank},{literal}
             listeners: {
                 change: {
                     fn: MODx.fireResourceFormChange,
                     scope: this
+                },
+                afterrender: function () {
+                    Coloris({{/literal}
+                        el: '.coloris',
+                        wrap: true,
+                        theme: 'modx' + ColorPicker.config.modxversion,
+                        themeMode: 'light',
+                        margin: 5,
+                        format: '{$params.format}',
+                        formatToggle: false,
+                        alpha: {$params.alpha},
+                        swatchesOnly: {$params.swatchesOnly}{literal},
+                        focusInput: true,
+                        clearButton: {
+                            show: {/literal}{$params.allowBlank}{literal},
+                            label: _('delete')
+                        },
+                        swatches: {/literal}{$params.swatches}{literal}
+                    });
                 }
             }
         });

@@ -1,0 +1,85 @@
+/** Coloris MODX theme **/
+
+.clr-field button, {
+  width: 22px;
+  height: 22px;
+  right: 5px;
+  border-radius: 3px;
+  margin: 0;
+  z-index: 1;
+}
+
+.clr-modx2, .clr-modx3 {
+  &.clr-picker {
+    width: 277px;
+    border-radius: 3px;
+  }
+  .clr-gradient {
+    height: 150px;
+  }
+  .clr-swatches {
+    width: calc(100% - 18px);
+    margin: 0 9px;
+    button {
+      width: 25px;
+      height: 25px;
+      border-radius: 3px;
+      margin: 0 6px 8px 6px;
+    }
+    div {
+      justify-content: left;
+      padding-bottom: 7px;
+    }
+  }
+  .clr-color, .clr-preview, .clr-segmented {
+    border-radius: 3px;
+  }
+  .clr-preview {
+    margin: 15px 0 15px 15px;
+    &:before, &:after {
+      border-radius: 3px;
+    }
+  }
+  .clr-format {
+    width: calc(100% - 30px);
+    margin: 0 15px 15px;
+  }
+  .clr-segmented {
+    label {
+      &:first-of-type {
+        border-radius: 1px 0 0 1px;
+      }
+      &:last-of-type {
+        border-radius: 0 1px 1px 0;
+      }
+    }
+    input:checked + label {
+      color: #666666;
+      background-color: #dddddd;
+    }
+  }
+  .clr-clear {
+    border-radius: 3px;
+    transition: all 0.25s;
+    background-color: #32ab9a;
+    background-image: linear-gradient(#32ab9a, #00948e);
+    box-shadow: none;
+    color: #ffffff;
+    margin: 0 15px 15px auto;
+    &:hover {
+      background-color: #2b9385;
+      background-image: linear-gradient(#2b9385, #007571);
+    }
+  }
+  input.clr-color {
+    margin: 15px 15px 0;
+    width: calc(100% - 80px);
+    &:focus {
+      border-color: #bbbbbb;
+    }
+  }
+  .clr-hue, .clr-alpha {
+    margin: 5px 15px;
+    width: calc(100% - 30px);
+  }
+}

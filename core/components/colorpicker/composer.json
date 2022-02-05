@@ -1,0 +1,31 @@
+{
+  "name": "treehillstudio/colorpicker",
+  "description": "ColorPicker Template Variable",
+  "authors": [
+    {
+      "name": "Benjamin\nVauchel",
+      "email": "benjamin.vauchel@gmail.com",
+      "homepage": "https://github.com/benjamin-vauchel"
+    },
+    {
+      "name": "Thomas Jakobi",
+      "email": "office@treehillstudio.com",
+      "homepage": "https://treehillstudio.com"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "config": {
+    "platform": {
+      "php": "7.3"
+    }
+  },
+  "require": {
+    "php": ">=7.3",
+    "ozdemirburak/iris": "^2.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "TreehillStudio\\ColorPicker\\": "src/"
+    }
+  }
+}
