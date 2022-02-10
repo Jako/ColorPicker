@@ -39,7 +39,7 @@
         items: [{
             layout: 'column',
             items: [{
-                columnWidth: .33,
+                columnWidth: .5,
                 layout: 'form',
                 labelAlign: 'top',
                 items: [{
@@ -74,7 +74,7 @@
                     cls: 'desc-under'
                 }]
             }, {
-                columnWidth: .33,
+                columnWidth: .5,
                 layout: 'form',
                 labelAlign: 'top',
                 items: [{
@@ -93,8 +93,11 @@
                     html: _('colorpicker.output_alpha_desc'),
                     cls: 'desc-under'
                 }]
-            }, {
-                columnWidth: .34,
+            }]
+        }, {
+            layout: 'column',
+            items: [{
+                columnWidth: .5,
                 layout: 'form',
                 labelAlign: 'top',
                 items: [{
@@ -125,6 +128,26 @@
                     xtype: MODx.expandHelp ? 'label' : 'hidden',
                     forId: 'prop_color_output{/literal}{$tv}{literal}',
                     html: _('colorpicker.output_type_desc'),
+                    cls: 'desc-under'
+                }]
+            },{
+                columnWidth: .5,
+                layout: 'form',
+                labelAlign: 'top',
+                items: [{
+                    xtype: 'combo-boolean',
+                    fieldLabel: _('colorpicker.output_strip'),
+                    description: MODx.expandHelp ? '' : _('colorpicker.output_strip_desc'),
+                    name: 'prop_color_strip',
+                    hiddenName: 'prop_color_strip',
+                    id: 'prop_color_strip{/literal}{$tv}{literal}',
+                    value: (params['color_strip'] === 1 || params['color_strip'] === 'true'),
+                    anchor: '100%',
+                    listeners: oc
+                }, {
+                    xtype: MODx.expandHelp ? 'label' : 'hidden',
+                    forId: 'prop_color_strip{/literal}{$tv}{literal}',
+                    html: _('colorpicker.output_strip_desc'),
                     cls: 'desc-under'
                 }]
             }]

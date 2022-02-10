@@ -5,7 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2022-02-10
+
+### Added
+
+- Strip the "#" prefix from the output by option
+
 ## [2.0.0] - 2022-02-05
+
+### Breaking
+
+- The hex template variable (default) database values are prefixed with a "#" character during the update
 
 ### Added
 
@@ -16,10 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Optional restrict the colorpicker to swatches
 - Allow alpha values in the template variable input and output
 - RGB and HSL template variable values
-
-### Changed
-
-- The hex template variable (default) database values are prefixed with a "#" character during the update
 
 ## [1.0.4] - 2019-08-17
 

@@ -27,7 +27,8 @@ class ColorPickerOutputRender extends modTemplateVarOutputRender
 
         $outputFormat = $params['color_format'] ?? 'hex';
         $outputAlpha = isset($params['color_alpha']) && ($params['color_alpha'] == 'true' || $params['color_alpha'] == true);
-        $outputType = isset($params['color_alpha']) && ($params['color_output'] == 'json') ? 'json' : 'css';
+        $outputType = isset($params['color_output']) && ($params['color_output'] == 'json') ? 'json' : 'css';
+        $outputStrip = isset($params['color_strip']) && ($params['color_strip'] == 'true' || $params['color_strip'] == true);
 
         $output = $value;
         if ($value) {
@@ -58,7 +59,7 @@ class ColorPickerOutputRender extends modTemplateVarOutputRender
                 }
             }
         }
-        return $output;
+        return ($outputFormat === 'hex' && $outputType === 'css' && $outputStrip) ? substr($output, 1) : $output;
     }
 }
 
