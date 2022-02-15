@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da7b7e706ec99cda49084db87aa2dc4d",
+    "content-hash": "7d8fd87617e4a9e18b9141bdea7649fd",
     "packages": [
         {
             "name": "ozdemirburak/iris",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ozdemirburak/iris.git",
-                "reference": "f9a17f89cff869ae2f4df2547e42c4c752a785c9"
+                "reference": "239707401e09b9bab2baf3383343a8b9dea745db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ozdemirburak/iris/zipball/f9a17f89cff869ae2f4df2547e42c4c752a785c9",
-                "reference": "f9a17f89cff869ae2f4df2547e42c4c752a785c9",
+                "url": "https://api.github.com/repos/ozdemirburak/iris/zipball/239707401e09b9bab2baf3383343a8b9dea745db",
+                "reference": "239707401e09b9bab2baf3383343a8b9dea745db",
                 "shasum": ""
             },
             "require": {
@@ -60,9 +60,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ozdemirburak/iris/issues",
-                "source": "https://github.com/ozdemirburak/iris/tree/2.4.0"
+                "source": "https://github.com/ozdemirburak/iris/tree/2.5.0"
             },
-            "time": "2021-10-05T15:14:41+00:00"
+            "time": "2022-02-13T20:50:58+00:00"
         }
     ],
     "packages-dev": [],
@@ -72,8 +72,11 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2.5"
+        "php": ">=7.3"
     },
     "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.3"
+    },
     "plugin-api-version": "2.1.0"
 }
