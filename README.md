@@ -9,8 +9,6 @@ Color select custom template variable in MODX Revolution.
 With this MODX Revolution custom template variable two depending datepicker inputs
 could be used to insert a date range in a MODX resource.
 
-For more information please read the [documentation](https://jako.github.io/ColorPicker/).
-
 ## Installation
 
 MODX Package Management
