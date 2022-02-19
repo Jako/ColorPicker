@@ -24,10 +24,11 @@ if ($object->xpdo) {
     }
 
     if (!function_exists('cleanupFolders')) {
-        function cleanupFolders($modx, $corePath, $assetsPath, $cleanup, $package, $version)
+        function cleanupFolders($modx, $corePath, $managerPath, $assetsPath, $cleanup, $package, $version)
         {
             $paths = [
                 'core' => $corePath,
+                'manager' => $managerPath,
                 'assets' => $assetsPath,
             ];
             $countFiles = 0;
@@ -124,15 +125,31 @@ if ($object->xpdo) {
             /** @var modTransportPackage $oldPackage */
             $oldPackage = $modx->getObject('transport.modTransportPackage', $c);
             $corePath = $modx->getOption('core_path', null, MODX_CORE_PATH);
+            $managerPath = $modx->getOption('manager_path', null, MODX_MANAGER_PATH);
             $assetsPath = $modx->getOption('assets_path', null, MODX_ASSETS_PATH);
 
-            if ($oldPackage && $oldPackage->compareVersion('1.4.0', '>')) {
+            if ($oldPackage && $oldPackage->compareVersion('1.0.3', '>')) {
+                $cleanup = [
+                    'core' => [
+                        'model/modx/processors/element/tv/renders/mgr/input/colorpicker.class.php',
+                        'model/modx/processors/element/tv/renders/mgr/properties/colorpicker.php',
+                        'model/modx/processors/element/tv/renders/web/output/colorpicker.class.php',
+                    ],
+                    'manager' => [
+                        'templates/default/element/tv/renders/input/colorpicker.tpl',
+                        'templates/default/element/tv/renders/properties/colorpicker.tpl',
+                    ]
+                ];
+                cleanupFolders($modx, $corePath, $assetsPath, $managerPath, $cleanup, 'ColorPicker', '1.0.3');
+                cleanupPluginEvents($modx, 'ColorPicker', ['OnDocFormRender']);
+            }
+            if ($oldPackage && $oldPackage->compareVersion('2.0.0', '>')) {
                 $cleanup = [
                     'assets' => [
                         'components/colorpicker/images',
                     ]
                 ];
-                cleanupFolders($modx, $corePath, $assetsPath, $cleanup, 'ColorPicker', '1.4.0');
+                cleanupFolders($modx, $corePath, $assetsPath, $managerPath, $cleanup, 'ColorPicker', '2.0.0');
                 cleanupPluginEvents($modx, 'ColorPicker', ['OnDocFormRender']);
             }
             $success = true;
