@@ -85,8 +85,10 @@ if ($object->xpdo) {
                 ]);
                 /** @var modPluginEvent $pluginEvent */
                 $pluginEvent = $modx->getObject('modPluginEvent', $c);
-                $pluginEvent->remove();
-                $modx->log(xPDO::LOG_LEVEL_INFO, 'Removed ' . $event . ' from ' . $plugin . ' plugin.');
+                if ($pluginEvent) {
+                    $pluginEvent->remove();
+                    $modx->log(xPDO::LOG_LEVEL_INFO, 'Removed ' . $event . ' from ' . $plugin . ' plugin.');
+                }
             }
         }
     }
@@ -97,61 +99,31 @@ if ($object->xpdo) {
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
-            $c = $modx->newQuery('transport.modTransportPackage');
-            $c->where(
-                [
-                    'workspace' => 1,
-                    "(SELECT
-            `signature`
-            FROM {$modx->getTableName('transport.modTransportPackage')} AS `latestPackage`
-            WHERE `latestPackage`.`package_name` = `modTransportPackage`.`package_name`
-            ORDER BY
-                `latestPackage`.`version_major` DESC,
-                `latestPackage`.`version_minor` DESC,
-                `latestPackage`.`version_patch` DESC,
-                IF(`release` = '' OR `release` = 'ga' OR `release` = 'pl','z',`release`) DESC,
-                `latestPackage`.`release_index` DESC
-                LIMIT 1,1) = `modTransportPackage`.`signature`",
-                ]
-            );
-            $c->where(
-                [
-                    'modTransportPackage.signature:LIKE' => $options['namespace'] . '-%',
-                    'modTransportPackage.installed:IS NOT' => null
-                ]
-            );
-            $c->limit(1);
-
-            /** @var modTransportPackage $oldPackage */
-            $oldPackage = $modx->getObject('transport.modTransportPackage', $c);
             $corePath = $modx->getOption('core_path', null, MODX_CORE_PATH);
             $managerPath = $modx->getOption('manager_path', null, MODX_MANAGER_PATH);
             $assetsPath = $modx->getOption('assets_path', null, MODX_ASSETS_PATH);
 
-            if ($oldPackage && $oldPackage->compareVersion('1.0.3', '>')) {
-                $cleanup = [
-                    'core' => [
-                        'model/modx/processors/element/tv/renders/mgr/input/colorpicker.class.php',
-                        'model/modx/processors/element/tv/renders/mgr/properties/colorpicker.php',
-                        'model/modx/processors/element/tv/renders/web/output/colorpicker.class.php',
-                    ],
-                    'manager' => [
-                        'templates/default/element/tv/renders/input/colorpicker.tpl',
-                        'templates/default/element/tv/renders/properties/colorpicker.tpl',
-                    ]
-                ];
-                cleanupFolders($modx, $corePath, $assetsPath, $managerPath, $cleanup, 'ColorPicker', '1.0.3');
-                cleanupPluginEvents($modx, 'ColorPicker', ['OnDocFormRender']);
-            }
-            if ($oldPackage && $oldPackage->compareVersion('2.0.0', '>')) {
-                $cleanup = [
-                    'assets' => [
-                        'components/colorpicker/images',
-                    ]
-                ];
-                cleanupFolders($modx, $corePath, $assetsPath, $managerPath, $cleanup, 'ColorPicker', '2.0.0');
-                cleanupPluginEvents($modx, 'ColorPicker', ['OnDocFormRender']);
-            }
+            $cleanup = [
+                'core' => [
+                    'model/modx/processors/element/tv/renders/mgr/input/colorpicker.class.php',
+                    'model/modx/processors/element/tv/renders/mgr/properties/colorpicker.php',
+                    'model/modx/processors/element/tv/renders/web/output/colorpicker.class.php',
+                ],
+                'manager' => [
+                    'templates/default/element/tv/renders/input/colorpicker.tpl',
+                    'templates/default/element/tv/renders/properties/colorpicker.tpl',
+                ]
+            ];
+            cleanupFolders($modx, $corePath, $assetsPath, $managerPath, $cleanup, 'ColorPicker', '1.0.3');
+
+            $cleanup = [
+                'assets' => [
+                    'components/colorpicker/images',
+                ]
+            ];
+            cleanupFolders($modx, $corePath, $assetsPath, $managerPath, $cleanup, 'ColorPicker', '2.0.0');
+            cleanupPluginEvents($modx, 'ColorPicker', ['OnDocFormRender']);
+
             $success = true;
             break;
         case xPDOTransport::ACTION_UNINSTALL:
