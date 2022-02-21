@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Remove the pre 1.0.3 ColorPicker files in the core & manager folder during the update
+- Add a default value for the input format to avoid javascript errors
 
 ## [2.0.1] - 2022-02-10
 

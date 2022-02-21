@@ -39,6 +39,7 @@ class ColorPickerInputRender extends modTemplateVarInputRender
     public function process($value, array $params = [])
     {
         // set params
+        $params['format'] = $params['format'] ?? 'hex';
         $params['allowBlank'] = $params['allowBlank'] ? 'true' : 'false';
         $params['alpha'] = $params['alpha'] ? 'true' : 'false';
         $params['swatchesOnly'] = $params['swatchesOnly'] ? 'true' : 'false';

@@ -41,7 +41,7 @@ class ColorPicker
      * The version
      * @var string $version
      */
-    public $version = '2.0.2';
+    public $version = '2.0.2-pl2';
 
     /**
      * The class options
