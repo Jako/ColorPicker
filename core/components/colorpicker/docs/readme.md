@@ -29,10 +29,11 @@ https://github.com/Jako/ColorPicker
 
 ## Translations
 
-Translations of ColorPicker can be made on [Weblate](https://hosted.weblate.org/projects/modx-agenda/)
+Translations of ColorPicker can be made on [Weblate](https://hosted.weblate.org/projects/modx-extras/)
 
 ## Third party licenses
 
 This extra includes third party software, for which we are thankful.
 
-- Symfony YAML, MIT License
+- mdbassit/Coloris, MIT License
+- ozdemirburak/iris, MIT License
