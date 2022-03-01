@@ -24,8 +24,8 @@
     "systemSettings": [
       {
         "key": "debug",
-        "area": "system",
         "type": "combo-boolean",
+        "area": "system",
         "value": "0"
       }
     ]
@@ -47,8 +47,12 @@
     "setupOptions": {
       "source": "setup.options.php"
     },
+    "options": {
+      "composer": true
+    },
     "resolver": {
       "after": [
+        "resolve.composer.php",
         "resolve.version.php",
         "resolve.cleanup.php",
         "resolve.treehillstudio.php"
