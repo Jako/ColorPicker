@@ -550,6 +550,7 @@ input.clr-color:focus {
 .clr-modx2.clr-picker, .clr-modx3.clr-picker {
   width: 277px;
   border-radius: 3px;
+  z-index: 10000;
 }
 .clr-modx2 .clr-gradient, .clr-modx3 .clr-gradient {
   height: 150px;
