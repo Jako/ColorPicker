@@ -3,7 +3,7 @@
   "lowCaseName": "colorpicker",
   "description": "ColorPicker Template Variable",
   "author": "Benjamin Vauchel, Thomas Jakobi",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "package": {
     "elements": {
       "plugins": [

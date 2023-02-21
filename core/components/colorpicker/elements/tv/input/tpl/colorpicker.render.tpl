@@ -1,6 +1,4 @@
-<input id="tv{$tv->id}" type="text"
-       value="{$tv->value}" name="tv{$tv->id}"
-       onblur="MODx.fireResourceFormChange();"/>
+<input id="tv{$tv->id}" type="text" value="{$tv->value}" name="tv{$tv->id}" onblur="MODx.fireResourceFormChange();"/>
 <script type="text/javascript">
     // <![CDATA[{literal}
     Ext.onReady(function () {
@@ -9,7 +7,7 @@
             applyTo: 'tv{$tv->id}',
             name: 'tv{$tv->id}',
             value: '{$tv->value}',
-            cls: 'coloris',
+            cls: 'coloris tv{$tv->id}',
             width: '150',
             allowBlank: {$params.allowBlank},{literal}
             listeners: {
@@ -24,16 +22,20 @@
                         theme: 'modx' + ColorPicker.config.modxversion,
                         themeMode: 'light',
                         margin: 5,
-                        format: '{$params.format}',
                         formatToggle: false,
-                        alpha: {$params.alpha},
-                        swatchesOnly: {$params.swatchesOnly}{literal},
-                        focusInput: true,
-                        clearButton: {
-                            show: {/literal}{$params.allowBlank}{literal},
-                            label: _('delete')
-                        },
-                        swatches: {/literal}{$params.swatches}{literal}
+                        focusInput: true{literal}
+                    });
+                    document.getElementById('{/literal}tv{$tv->id}{literal}').addEventListener('click', e => {
+                        Coloris({{/literal}
+                            format: '{$params.format}',
+                            alpha: {$params.alpha},
+                            swatchesOnly: {$params.swatchesOnly},
+                            swatches: {$params.swatches},{literal}
+                            clearButton: {
+                                show: {/literal}{$params.allowBlank}{literal},
+                                label: _('delete')
+                            },
+                        });
                     });
                 }
             }

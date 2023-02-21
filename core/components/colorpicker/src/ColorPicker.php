@@ -3,7 +3,7 @@
  * ColorPicker
  *
  * Copyright 2011-2017 by Benjamin Vauchel <benjamin.vauchel@gmail.com>
- * Copyright 2017-2022 by Thomas Jakobi <thomas.jakobipartout.info>
+ * Copyright 2017-2023 by Thomas Jakobi <thomas.jakobipartout.info>
  *
  * @package colorpicker
  * @subpackage classfile
@@ -41,7 +41,7 @@ class ColorPicker
      * The version
      * @var string $version
      */
-    public $version = '2.0.4';
+    public $version = '2.0.5';
 
     /**
      * The class options
