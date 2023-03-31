@@ -18,7 +18,9 @@ if ($object->xpdo) {
             $countTvValues = 0;
 
             $c = $modx->newQuery('modTemplateVarResource');
-            $c->leftJoin('modTemplateVar', 'TemplateVar', ['modTemplateVarResource.tmplvarid = TemplateVar.id']);
+            $c->leftJoin('modTemplateVar', 'TemplateVar', [
+                'modTemplateVarResource.tmplvarid = TemplateVar.id'
+            ]);
             $c->where(['TemplateVar.type' => 'colorpicker']);
             /** @var modTemplateVar[] $events */
             $templateVarValues = $modx->getIterator('modTemplateVarResource', $c);
