@@ -1,4 +1,4 @@
-[![Default Lexicon](https://hosted.weblate.org/widgets/modx-extras/colorpicker/standard/svg-badge.svg)](https://hosted.weblate.org/projects/modx-extras/colorpicker/standard/)
+[![Default Lexicon](https://hosted.weblate.org/widget/modx-extras/colorpicker/standard/svg-badge.svg)](https://hosted.weblate.org/projects/modx-extras/colorpicker/standard/)
 
 # ColorPicker
 
