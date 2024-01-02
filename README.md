@@ -1,4 +1,4 @@
-[![Default Lexicon](https://hosted.weblate.org/widgets/modx-extras/-/modx-colorpicker-standard/svg-badge.svg)](https://hosted.weblate.org/projects/modx-extras/modx-colorpicker-standard/)
+[![Default Lexicon](https://hosted.weblate.org/widgets/modx-extras/colorpicker/standard/svg-badge.svg)](https://hosted.weblate.org/projects/modx-extras/colorpicker/standard/)
 
 # ColorPicker
 
@@ -27,4 +27,4 @@ The project is licensed under the [GPLv2 license](https://github.com/Jako/ColorP
 
 ## Translations
 
-Translations of the package can be made for the [Default Lexicon](https://hosted.weblate.org/projects/modx-extras/modx-colorpicker-standard/) and the [System Setting Lexicon](https://hosted.weblate.org/projects/modx-extras/modx-colorpicker-system-settings/)
+Translations of the package can be made for the [Default Lexicon](https://hosted.weblate.org/projects/modx-extras/colorpicker/standard/) and the [System Setting Lexicon](https://hosted.weblate.org/projects/modx-extras/colorpicker/system-settings/)
