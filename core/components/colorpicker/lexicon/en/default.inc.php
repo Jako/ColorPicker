@@ -25,6 +25,6 @@ $_lang['colorpicker.output_type_css'] = 'CSS';
 $_lang['colorpicker.output_type_desc'] = 'Examples for CSS output are described under Format. Example for JSON output: Hex: ["80","ff","00"] or ["80","ff","00",0.5], RGB: [128,255,0] or [128,255,0,0.5], HSL: [90,"100%","50%"] or [90,"100%","50%",0.5]';
 $_lang['colorpicker.output_type_json'] = 'JSON';
 $_lang['colorpicker.swatches'] = 'Swatches';
-$_lang['colorpicker.swatches_desc'] = 'A JSON encoded array of the desired color swatches to be displayed. If the list is empty, the swatches are disabled. Example: ["#264653", "#2a9d8f", "#e9c46a", "rgb(244,162,97)", "#e76f51", "#d62828", "navy", "#07b", "#0096c7", "#00b4d880", "rgba(0,119,182,0.8)"]';
+$_lang['colorpicker.swatches_desc'] = 'A JSON-encoded array of the desired color swatches to be displayed. If the list is empty, the swatches are disabled. Example: ["#264653", "#2a9d8f", "#e9c46a", "rgb(244,162,97)", "#e76f51", "#d62828", "navy", "#07b", "#0096c7", "#00b4d880", "rgba(0,119,182,0.8)"]';
 $_lang['colorpicker.swatchesOnly'] = 'Swatches Only';
 $_lang['colorpicker.swatchesOnly_desc'] = 'Set this value to true to hide all color selection widgets (spectrum, hue, …) except the color swatches.';
