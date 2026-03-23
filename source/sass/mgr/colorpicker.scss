@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:meta";
 
 $treehillstudio-color: #cbd842;
 
@@ -26,6 +27,6 @@ $treehillstudio-color: #cbd842;
   }
 }
 
-@import '../../../node_modules/@melloware/coloris/dist/coloris';
-@import 'coloris_modx';
-@import 'modx3';
+@include meta.load-css('../../../node_modules/@melloware/coloris/dist/coloris');
+@include meta.load-css('coloris_modx');
+@include meta.load-css('modx3');
