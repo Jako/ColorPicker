@@ -13,34 +13,36 @@
 }
 
 .treehillstudio_window a {
-  color: #b2bf28;
+  color: rgb(178.3157894737, 191.4868421053, 39.5131578947);
   text-decoration: none;
 }
 .treehillstudio_window a:hover {
-  color: #77801a;
+  color: rgb(119.2631578947, 128.0723684211, 26.4276315789);
 }
 
 .clr-picker {
   display: none;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   position: absolute;
   width: 200px;
   z-index: 1000;
   border-radius: 10px;
   background-color: #fff;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: flex-end;
+  direction: ltr;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
   -moz-user-select: none;
   -webkit-user-select: none;
-  -ms-user-select: none;
-      user-select: none;
+  user-select: none;
 }
 
-.clr-picker.clr-open {
-  display: -ms-flexbox;
+.clr-picker.clr-open,
+.clr-picker[data-inline=true] {
   display: flex;
+}
+
+.clr-picker[data-inline=true] {
+  position: relative;
 }
 
 .clr-gradient {
@@ -66,24 +68,24 @@
 
 .clr-picker input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 8px;
+  height: 16px;
 }
 
 .clr-picker input[type=range]::-webkit-slider-thumb {
-  width: 8px;
-  height: 8px;
+  width: 16px;
+  height: 16px;
   -webkit-appearance: none;
 }
 
 .clr-picker input[type=range]::-moz-range-track {
   width: 100%;
-  height: 8px;
+  height: 16px;
   border: 0;
 }
 
 .clr-picker input[type=range]::-moz-range-thumb {
-  width: 8px;
-  height: 8px;
+  width: 16px;
+  height: 16px;
   border: 0;
 }
 
@@ -108,12 +110,12 @@
   background-image: linear-gradient(90deg, rgba(0, 0, 0, 0), currentColor);
 }
 
-.clr-hue input,
-.clr-alpha input {
+.clr-hue input[type=range],
+.clr-alpha input[type=range] {
   position: absolute;
-  width: calc(100% + 16px);
+  width: calc(100% + 32px);
   height: 16px;
-  left: -8px;
+  left: -16px;
   top: -4px;
   margin: 0;
   background-color: transparent;
@@ -153,14 +155,12 @@
 
 .clr-format {
   display: none;
-  -ms-flex-order: 1;
-      order: 1;
+  order: 1;
   width: calc(100% - 40px);
   margin: 0 20px 20px;
 }
 
 .clr-segmented {
-  display: -ms-flexbox;
   display: flex;
   position: relative;
   width: 100%;
@@ -188,9 +188,12 @@
 }
 
 .clr-segmented label {
-  -ms-flex-positive: 1;
-      flex-grow: 1;
+  flex-grow: 1;
+  margin: 0;
   padding: 4px 0;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: initial;
   text-align: center;
   cursor: pointer;
 }
@@ -209,20 +212,16 @@
 }
 
 .clr-swatches {
-  -ms-flex-order: 2;
-      order: 2;
+  order: 2;
   width: calc(100% - 32px);
   margin: 0 16px;
 }
 
 .clr-swatches div {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   padding-bottom: 12px;
-  -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
 }
 
 .clr-swatches button {
@@ -230,6 +229,7 @@
   width: 20px;
   height: 20px;
   margin: 0 4px 6px 4px;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   color: inherit;
@@ -253,11 +253,10 @@
 }
 
 input.clr-color {
-  -ms-flex-order: 1;
-      order: 1;
+  order: 1;
   width: calc(100% - 80px);
   height: 32px;
-  margin: 15px 20px 20px 0;
+  margin: 15px 20px 20px auto;
   padding: 0 10px;
   border: 1px solid #ddd;
   border-radius: 16px;
@@ -274,12 +273,12 @@ input.clr-color:focus {
   border: 1px solid #1e90ff;
 }
 
+.clr-close,
 .clr-clear {
   display: none;
-  -ms-flex-order: 2;
-      order: 2;
+  order: 2;
   height: 24px;
-  margin: 0 20px 20px auto;
+  margin: 0 20px 20px;
   padding: 0 20px;
   border: 0;
   border-radius: 12px;
@@ -291,15 +290,18 @@ input.clr-color:focus {
   cursor: pointer;
 }
 
+.clr-close {
+  display: block;
+  margin: 0 20px 20px auto;
+}
+
 .clr-preview {
   position: relative;
   width: 32px;
   height: 32px;
   margin: 15px 0 20px 20px;
-  border: 0;
   border-radius: 50%;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .clr-preview:before,
@@ -320,6 +322,22 @@ input.clr-color:focus {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
+.clr-preview button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  outline-offset: -2px;
+  background-color: transparent;
+  text-indent: -9999px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
 .clr-marker,
 .clr-hue div,
 .clr-alpha div,
@@ -333,6 +351,15 @@ input.clr-color:focus {
   color: transparent;
 }
 
+.clr-field input {
+  margin: 0;
+  direction: ltr;
+}
+
+.clr-field.clr-rtl input {
+  text-align: right;
+}
+
 .clr-field button {
   position: absolute;
   width: 30px;
@@ -340,12 +367,19 @@ input.clr-color:focus {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
   border: 0;
   color: inherit;
   text-indent: -1000px;
   white-space: nowrap;
   overflow: hidden;
   pointer-events: none;
+}
+
+.clr-field.clr-rtl button {
+  right: auto;
+  left: 0;
 }
 
 .clr-field button:after {
@@ -512,10 +546,14 @@ input.clr-color:focus {
 
 .clr-polaroid input.clr-color {
   width: calc(100% - 60px);
-  margin: 10px 10px 15px 0;
+  margin: 10px 10px 15px auto;
 }
 
 .clr-polaroid .clr-clear {
+  margin: 0 10px 15px 10px;
+}
+
+.clr-polaroid .clr-close {
   margin: 0 10px 15px auto;
 }
 
@@ -537,6 +575,27 @@ input.clr-color:focus {
   height: 22px;
 }
 
+/** Pill (horizontal) theme **/
+.clr-picker.clr-pill {
+  width: 380px;
+  padding-left: 180px;
+  box-sizing: border-box;
+}
+
+.clr-pill .clr-gradient {
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  margin-bottom: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.clr-pill .clr-hue {
+  margin-top: 20px;
+}
+
 /** Coloris MODX theme **/
 .clr-field button {
   width: 22px;
@@ -552,47 +611,58 @@ input.clr-color:focus {
   border-radius: 3px;
   z-index: 10000;
 }
+
 .clr-modx2 .clr-gradient, .clr-modx3 .clr-gradient {
   height: 150px;
 }
+
 .clr-modx2 .clr-swatches, .clr-modx3 .clr-swatches {
   width: calc(100% - 18px);
   margin: 0 9px;
 }
+
 .clr-modx2 .clr-swatches button, .clr-modx3 .clr-swatches button {
   width: 25px;
   height: 25px;
   border-radius: 3px;
   margin: 0 6px 8px 6px;
 }
+
 .clr-modx2 .clr-swatches div, .clr-modx3 .clr-swatches div {
-  -ms-flex-pack: left;
-      justify-content: left;
+  justify-content: left;
   padding-bottom: 7px;
 }
+
 .clr-modx2 .clr-color, .clr-modx2 .clr-preview, .clr-modx2 .clr-segmented, .clr-modx3 .clr-color, .clr-modx3 .clr-preview, .clr-modx3 .clr-segmented {
   border-radius: 3px;
 }
+
 .clr-modx2 .clr-preview, .clr-modx3 .clr-preview {
   margin: 15px 0 15px 15px;
 }
+
 .clr-modx2 .clr-preview:before, .clr-modx2 .clr-preview:after, .clr-modx3 .clr-preview:before, .clr-modx3 .clr-preview:after {
   border-radius: 3px;
 }
+
 .clr-modx2 .clr-format, .clr-modx3 .clr-format {
   width: calc(100% - 30px);
   margin: 0 15px 15px;
 }
+
 .clr-modx2 .clr-segmented label:first-of-type, .clr-modx3 .clr-segmented label:first-of-type {
   border-radius: 1px 0 0 1px;
 }
+
 .clr-modx2 .clr-segmented label:last-of-type, .clr-modx3 .clr-segmented label:last-of-type {
   border-radius: 0 1px 1px 0;
 }
+
 .clr-modx2 .clr-segmented input:checked + label, .clr-modx3 .clr-segmented input:checked + label {
   color: #666666;
   background-color: #dddddd;
 }
+
 .clr-modx2 .clr-clear, .clr-modx3 .clr-clear {
   border-radius: 3px;
   transition: all 0.25s;
@@ -602,17 +672,21 @@ input.clr-color:focus {
   color: #ffffff;
   margin: 0 15px 15px auto;
 }
+
 .clr-modx2 .clr-clear:hover, .clr-modx3 .clr-clear:hover {
   background-color: #2b9385;
   background-image: linear-gradient(#2b9385, #007571);
 }
+
 .clr-modx2 input.clr-color, .clr-modx3 input.clr-color {
   margin: 15px 15px 0;
   width: calc(100% - 80px);
 }
+
 .clr-modx2 input.clr-color:focus, .clr-modx3 input.clr-color:focus {
   border-color: #bbbbbb;
 }
+
 .clr-modx2 .clr-hue, .clr-modx2 .clr-alpha, .clr-modx3 .clr-hue, .clr-modx3 .clr-alpha {
   margin: 5px 15px;
   width: calc(100% - 30px);
@@ -627,6 +701,7 @@ input.clr-color:focus {
   color: #ffffff;
   margin: 0 15px 15px auto;
 }
+
 .clr-modx3 .clr-clear:hover {
   background-color: #528738;
   background-image: initial;

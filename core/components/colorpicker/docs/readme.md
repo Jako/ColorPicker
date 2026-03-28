@@ -35,5 +35,4 @@ Translations of ColorPicker can be made on [Weblate](https://hosted.weblate.org/
 
 This extra includes third party software, for which we are thankful.
 
-- mdbassit/Coloris, MIT License
-- ozdemirburak/iris, MIT License
+* ozdemirburak/iris@2.5.0 [MIT]

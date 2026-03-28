@@ -37,7 +37,7 @@ pkg.dependencies.forEach(function (dependency, index) {
 const scriptsMgr = function () {
     return gulp.src([
         'source/js/mgr/colorpicker.js',
-        'node_modules/@melloware/coloris/dist/coloris.js'
+        'node_modules/@melloware/coloris/dist/umd/coloris.js'
     ])
         .pipe(concat('colorpicker.min.js'))
         .pipe(uglify())

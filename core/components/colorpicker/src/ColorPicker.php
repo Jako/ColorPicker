@@ -3,7 +3,7 @@
  * ColorPicker
  *
  * Copyright 2011-2017 by Benjamin Vauchel <benjamin.vauchel@gmail.com>
- * Copyright 2017-2023 by Thomas Jakobi <thomas.jakobipartout.info>
+ * Copyright 2017-2026 by Thomas Jakobi <thomas.jakobipartout.info>
  *
  * @package colorpicker
  * @subpackage classfile
@@ -41,7 +41,7 @@ class ColorPicker
      * The version
      * @var string $version
      */
-    public $version = '2.0.5';
+    public $version = '2.0.6';
 
     /**
      * The class options
@@ -136,7 +136,7 @@ class ColorPicker
             $this->modx->controller->addJavascript($jsSourceUrl . 'colorpicker.js?v=v' . $this->version);
             $this->modx->controller->addJavascript($jsSourceUrl . 'colorpickerfield.js?v=v' . $this->version);
             $this->modx->controller->addJavascript($jsSourceUrl . 'Ext.ux.ColorPicker.js?v=v' . $this->version);
-            $this->modx->controller->addJavascript($nodeUrl . '@melloware/coloris/dist/coloris.js?v=v' . $this->version);
+            $this->modx->controller->addJavascript($nodeUrl . '@melloware/coloris/dist/umd/coloris.js?v=v' . $this->version);
             $this->modx->controller->addCss($cssSourceUrl . 'colorpicker.css?v=v' . $this->version);
         } else {
             $this->modx->controller->addJavascript($jsUrl . 'colorpicker.min.js?v=v' . $this->version);
