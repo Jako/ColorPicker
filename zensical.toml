@@ -1,6 +1,6 @@
 [project]
 site_name = "ColorPicker"
-site_description = "Documentation for ColorPicker, a ColorPicker Template Variable for MODX."
+site_description = "Documentation for ColorPicker, a color selection template variable for MODX."
 site_author = "Treehill Studio"
 site_url = "https://jako.github.io/ColorPicker/"
 repo_url = "https://github.com/Jako/ColorPicker/"

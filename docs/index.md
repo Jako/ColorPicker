@@ -1,6 +1,6 @@
 # ColorPicker
 
-Color select custom template variable in MODX Revolution.
+Color selection template variable for MODX.
 
 ### Requirements
 
@@ -10,7 +10,7 @@ Color select custom template variable in MODX Revolution.
 ### Features
 
 With this MODX Revolution custom template variable a color select input
-could be used to select a color in a MODX resource.
+can be used to select a color in a MODX resource.
 
 ### License
 
