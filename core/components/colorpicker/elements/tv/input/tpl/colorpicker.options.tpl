@@ -33,7 +33,7 @@
         items: [{
             layout: 'column',
             items: [{
-                columnWidth: .5,
+                columnWidth: 0.5,
                 layout: 'form',
                 labelAlign: 'top',
                 items: [{
@@ -53,7 +53,7 @@
                     cls: 'desc-under'
                 }]
             }, {
-                columnWidth: .5,
+                columnWidth: 0.5,
                 layout: 'form',
                 labelAlign: 'top',
                 items: [{
@@ -92,7 +92,7 @@
         }, {
             layout: 'column',
             items: [{
-                columnWidth: .5,
+                columnWidth: 0.5,
                 layout: 'form',
                 labelAlign: 'top',
                 items: [{
@@ -112,7 +112,7 @@
                     cls: 'desc-under'
                 }]
             }, {
-                columnWidth: .5,
+                columnWidth: 0.5,
                 layout: 'form',
                 labelAlign: 'top',
                 items: [{
