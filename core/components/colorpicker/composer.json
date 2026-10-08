@@ -1,6 +1,7 @@
 {
   "name": "treehillstudio/colorpicker",
   "description": "ColorPicker Template Variable",
+  "version": "2.0.6",
   "authors": [
     {
       "name": "Benjamin\nVauchel",
@@ -16,7 +17,7 @@
   "license": "GPL-2.0-or-later",
   "config": {
     "platform": {
-      "php": "7.3.0"
+      "php": "7.3"
     }
   },
   "require": {
