@@ -5,7 +5,7 @@ Color selection template variable for MODX.
 ### Requirements
 
 * MODX Revolution 2.6+
-* PHP 7.2+
+* PHP 7.3+
 
 ### Features
 
