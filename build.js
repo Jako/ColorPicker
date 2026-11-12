@@ -139,7 +139,7 @@ async function taskBump() {
             replace: copyrightReplace
         }], 'copyright in');
     }
-    replaceInFile('core/components/colorpicker/src/ColorPicker.php', [{
+    await replaceInFile('core/components/colorpicker/src/ColorPicker.php', [{
         search: /version = '\d+\.\d+\.\d+-?[0-9a-z]*'/ig,
         replace: `version = '${version}'`
     }], 'version in');
