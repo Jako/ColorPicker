@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Don't expose server paths in the manager page options
 
+### Fixed
+
+- Don't log the suppressed open_basedir warnings of Composer during the installation
+
 ## [2.0.6] - 2026-03-28
 
 ### Changed
